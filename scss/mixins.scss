@@ -1,0 +1,65 @@
+@mixin ubuntu ($weight: 300, $fontS: 13px){
+  font-family: 'ubuntu', Arial, sans-serif;
+  font-weight: $weight;
+  font-style: normal;
+  font-size: $fontS;
+}
+
+@mixin lifehack ($fontS: 13px){
+  font-family: 'lifehack', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: $fontS;
+}
+
+@mixin gagalin($fontS: 13px) {
+  font-family: 'gagalin', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: $fontS;
+}
+
+@mixin circle($width, $color) {
+  width: $width;
+  height: $width;
+  border-radius: 50%;
+  background-color: $color;
+}
+
+@mixin bgcover() {
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin centered($axis: 'both') {
+  position: absolute;
+
+  @if ($axis == 'both') {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @if ($axis == 'x') {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if ($axis == 'y') {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if ($axis == 'max') {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  @if ($axis == 'fullx') {
+    left: 0;
+    right: 0;
+  }
+  @if ($axis == 'fully') {
+    top: 0;
+    bottom: 0;
+  }
+}

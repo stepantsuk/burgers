@@ -1,0 +1,43 @@
+.points {
+  position: fixed;
+  top : 90px;
+  right: 50px;
+}
+
+.points-item {
+  margin-bottom: 5px;
+}
+
+.points-link {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  &:after, &:before {
+    content: '';
+    display: block;
+    @include centered();
+  }
+  &:before {
+    @include circle(5px, $white);
+  }
+  &:after {
+    border: 1px solid $white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: .3s;
+  }
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.points-item--active {
+  .points-link:after {
+    opacity: 1;
+  }
+}

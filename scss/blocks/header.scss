@@ -1,0 +1,47 @@
+.header {
+  width: 100%;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  
+  text-transform: uppercase;
+}
+
+.nav__list {
+  display: flex;
+  
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  margin-right: 15px;
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: '';
+      display: block;
+      @include circle (4px, #fff);
+      margin: 0 15px;
+      
+    }
+    &:first-child:before {
+      display: none;
+    }
+  }
+  &__list {
+    display: flex;
+  }
+  &__link {
+    @include ubuntu(500, 13px);
+    color: #fff;
+
+  }
+
+}
+

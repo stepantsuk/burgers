@@ -1,0 +1,35 @@
+.btn {
+  width: 98px;
+  height: 36px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  &--header {
+    background-color: $orange;
+    @include ubuntu(500, 13px);
+    color: $white;
+    transition: background-color .3s;
+      &:hover {
+    background-color: #c1401e;
+  }}
+  &--reviews {
+    background-color:$dark-grey08;
+    @include ubuntu(500, 13px);
+    color: $white;
+    transition: background-color .3s;
+    &:hover {
+      background-color: $dark-grey;
+    }}
+  &--order {
+    background-color: $orange;
+    @include ubuntu(500, 13px);
+    color: $white;
+    &:hover {
+      background-color: #c1401e;
+    }  
+    }
+}
+
+.clear{
+  color: $white;
+  margin-left: 5px;
+}

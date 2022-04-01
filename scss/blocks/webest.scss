@@ -1,0 +1,38 @@
+.we-best{
+  @include bgcover();
+  background-image: url(./../../img/bg/bg_we.png);
+}
+
+.we-best-title {
+  margin-bottom: 55px;
+}
+
+.we-best__list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.we-best__item {
+  width: 30%;
+  text-align: center;
+}
+
+.we-best__pic {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  height: 95px;
+  margin-bottom: 35px;
+}
+
+.we-best__header {
+  @include lifehack(24px);
+  color: $dark-grey;
+  margin-bottom: 25px;
+}
+
+.we-best__text {
+  @include ubuntu(300, 14px);
+  line-height: 1.8;
+  color: $dark-grey08;
+}
