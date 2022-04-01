@@ -681,7 +681,7 @@ img {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background: url("./../../img/icons/checkbox.png") center no-repeat;
+  background: url("./../img/icons/checkbox.png") center no-repeat;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
