@@ -274,7 +274,7 @@ img {
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(./../../img/bg/bg_we.png);
+  background-image: url(./../img/bg/bg_we.png);
 }
 
 .we-best-title {
@@ -496,7 +496,7 @@ img {
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(./../../img/bg/bg_delivery.png);
+  background-image: url(./../img/bg/bg_delivery.png);
   width: 100%;
 }
 
