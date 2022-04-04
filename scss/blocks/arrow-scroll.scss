@@ -2,8 +2,8 @@
   @include centered('x');
   bottom: 40px;
   display: block;
-  width: 29px;
-  height: 14px;
+  width: rem(29px);
+  height: rem(14px);
   margin: 0 auto;
   background: url(./../img/icons/arrow_scroll.png) center / cover no-repeat;
 } 

@@ -4,7 +4,7 @@
 }
 
 .we-best-title {
-  margin-bottom: 55px;
+  margin-bottom: rem(55px);
 }
 
 .we-best__list {
@@ -22,17 +22,19 @@
   justify-content: center;
   align-items: stretch;
   height: 95px;
-  margin-bottom: 35px;
+  margin-bottom: rem(35px);
 }
 
 .we-best__header {
-  @include lifehack(24px);
+  @include lifehack();
+  font-size: rem(24px);
   color: $dark-grey;
-  margin-bottom: 25px;
+  margin-bottom: rem(25px);
 }
 
 .we-best__text {
-  @include ubuntu(300, 14px);
+  @include ubuntu(300);
+  font-size: rem(14px);
   line-height: 1.8;
   color: $dark-grey08;
 }

@@ -8,7 +8,6 @@ html, body {
 body {
   @include ubuntu();
   color: $white;
-  font-size: 14px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -16,6 +15,7 @@ body {
 
 html {
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 footer {
@@ -79,7 +79,7 @@ img {
 
 .container {
   width: 95%;
-  max-width: 940px;
+  max-width: rem(940px);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -87,15 +87,6 @@ img {
   justify-content: center;
 }
 
-.section-title {
-  @include gagalin(20px);
-  font-size: 69px;
-  color: $yellow;
-  &--we-best {
-    color: $dark-grey;
-    text-align: center;
-  }
-}
 
 
 

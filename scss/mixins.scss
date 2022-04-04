@@ -1,22 +1,25 @@
-@mixin ubuntu ($weight: 300, $fontS: 13px){
+//return to rem
+
+@function rem($px) {
+  @return $px / 16px * 1rem;
+}
+
+@mixin ubuntu ($weight: 300){
   font-family: 'ubuntu', Arial, sans-serif;
   font-weight: $weight;
   font-style: normal;
-  font-size: $fontS;
 }
 
-@mixin lifehack ($fontS: 13px){
+@mixin lifehack (){
   font-family: 'lifehack', sans-serif;
   font-weight: normal;
   font-style: normal;
-  font-size: $fontS;
 }
 
-@mixin gagalin($fontS: 13px) {
+@mixin gagalin() {
   font-family: 'gagalin', sans-serif;
   font-weight: normal;
   font-style: normal;
-  font-size: $fontS;
 }
 
 @mixin circle($width, $color) {

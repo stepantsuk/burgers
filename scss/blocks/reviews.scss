@@ -52,13 +52,15 @@
 }
 
 .reviews-title {
-  @include gagalin(14px);
+  @include gagalin();
+  font-size: rem(14px);
   color: $white;
-  margin-bottom: 30px;
+  margin-bottom: rem(30px);
 }
 
 .reviews-text {
-  @include ubuntu(300, 14px);
+  @include ubuntu(300);
+  font-size: rem(13px);
   color: $white;
   margin-bottom: 15px;
   line-height: 1.71;

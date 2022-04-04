@@ -1,17 +1,17 @@
 .points {
   position: fixed;
-  top : 90px;
-  right: 50px;
+  top : rem(90px);
+  right: rem(50px);
 }
 
 .points-item {
-  margin-bottom: 5px;
+  margin-bottom: rem(5px);
 }
 
 .points-link {
   display: block;
-  width: 16px;
-  height: 16px;
+  width: rem(16px);
+  height: rem(16px);
   position: relative;
   &:after, &:before {
     content: '';
@@ -23,8 +23,8 @@
   }
   &:after {
     border: 1px solid $white;
-    width: 16px;
-    height: 16px;
+    width: rem(16px);
+    height: rem(16px);
     border-radius: 50%;
     opacity: 0;
     transition: .3s;
