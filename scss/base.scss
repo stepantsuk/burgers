@@ -18,8 +18,13 @@ html {
   box-sizing: border-box;
 }
 
+footer {
+  position: relative;
+  width: 100%;
+}
+
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 
@@ -30,6 +35,11 @@ ul {
 }
 ul li {
   list-style: none;
+}
+
+table { //для того, чтобы у ячеек был один бордер на двоих, т.е. не было двойных границ у ячеек
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -61,7 +71,6 @@ img {
 .wrapper {
   width: 100%;
   min-height: 100%;
-  overflow: hidden;
 }
 
 .section {

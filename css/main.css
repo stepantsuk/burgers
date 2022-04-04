@@ -22,9 +22,14 @@ html {
           box-sizing: border-box;
 }
 
+footer {
+  position: relative;
+  width: 100%;
+}
+
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 ul {
@@ -34,6 +39,11 @@ ul {
 
 ul li {
   list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -65,7 +75,6 @@ img {
 .wrapper {
   width: 100%;
   min-height: 100%;
-  overflow: hidden;
 }
 
 .section {
@@ -209,6 +218,7 @@ img {
 }
 
 .welcome__content {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,11 +273,16 @@ img {
 }
 
 .arrow-scroll {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 40px;
   display: block;
   width: 29px;
   height: 14px;
-  margin: 0 auto 20px;
-  background-image: url(./../../img/icons/arrow_scroll.png);
+  margin: 0 auto;
+  background: url(./../img/icons/arrow_scroll.png) center/cover no-repeat;
 }
 
 .we-best {
@@ -327,8 +342,7 @@ img {
 }
 
 .btn {
-  width: 98px;
-  height: 36px;
+  padding: 10px 15px;
   border-radius: 5px;
   text-transform: uppercase;
 }
