@@ -12,7 +12,7 @@
 }
 
 .section-title--delivery {
-  margin-bottom: 45px;
+  margin-bottom: rem(45px);
 }
 
 .form-wrapper {
@@ -25,7 +25,7 @@
 
 .form__column {
   flex: 1;
-  margin-right: 20px;
+  margin-right: rem(20px);
 
   &:last-child {
     margin-right: 0;
@@ -43,7 +43,7 @@
 
 .form__block {
   flex: 1;
-  margin-right: 20px;;
+  margin-right: rem(20px);;
 
   &:last-child {
     margin-right: 0;
@@ -51,7 +51,7 @@
 }
 
 .form__block-title {
-  margin-bottom: 7px;
+  margin-bottom:rem(7px);
 }
 
 .form-field {
@@ -59,8 +59,8 @@
   color: $dark-grey;
   width: 100%;
   background: #fff;
-  border-radius: 5px;
-  padding: 8px 20px;
+  border-radius: rem(5px);
+  padding: rem(8px) rem(20px);
   outline: none;
   border: 2px solid #d1cfcb;
 
@@ -72,7 +72,7 @@
 .form__textarea {
   resize: none;
   outline: none;
-  height: 118px;
+  height: rem(118px);
 }
 
 .form__buttons {
@@ -86,7 +86,7 @@
 
 .form__radio {
   display: flex;
-  margin-right: 25px;
+  margin-right: rem(25px);
   align-items: center;
 }
 
@@ -94,23 +94,23 @@
   //display: none; или:
   position: absolute;
   clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
+  width: rem(1px);
+  height: rem(1px);
   overflow: hidden;
 }
 
 .radio__visible {
-  width: 16px;
-  height: 16px;
+  width: rem(16px);
+  height: rem(16px);
   border-radius: 50%;
   background-color: $white;
   position: relative;
-  margin-right: 10px;
+  margin-right: rem(10px);
   &:before {
     content: "";
     display: block;
-    width: 8px;
-    height: 8px;
+    width: rem(8px);
+    height: rem(8px);
     @include centered(both);
     background-color: $red;
     border-radius: 50%;
@@ -137,11 +137,11 @@
 }
 
 .checkbox__visible {
-  width: 16px;
-  height: 16px;
+  width: rem(16px);
+  height: rem(16px);
   background-color: $white;
   position: relative;
-  margin-right: 10px;
+  margin-right: rem(10px);
   &:before {
     content: "";
     display: block;

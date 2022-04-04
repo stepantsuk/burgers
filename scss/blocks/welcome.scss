@@ -18,18 +18,18 @@
   justify-content: center;
   align-items: flex-start;
   width: 45%;
-  margin-top: 70px;
+  margin-top: rem(70px);
 }
 
 .welcome__desc {
-  @include lifehack(20px);
+  @include lifehack();
   color: $white;
-  font-size: 65px;
-  margin-top: 15px;
+  font-size: rem(65px);
+  margin-top: rem(15px);
 }
 
 .welcome__content-pic {
-  margin-right: 15px;
+  margin-right: rem(15px);
 }
 
 .container--welcome {

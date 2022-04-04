@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  padding-top: 16px;
+  padding-top: rem(16px);
   display: flex;
   justify-content: space-between;
   
@@ -18,7 +18,7 @@
 }
 
 .menu {
-  margin-right: 15px;
+  margin-right: rem(15px);
   &__item {
     display: flex;
     align-items: center;
@@ -27,7 +27,7 @@
       content: '';
       display: block;
       @include circle (4px, #fff);
-      margin: 0 15px;
+      margin: 0 rem(15px);
       
     }
     &:first-child:before {
@@ -38,7 +38,8 @@
     display: flex;
   }
   &__link {
-    @include ubuntu(500, 13px);
+    @include ubuntu(500);
+    font-size: rem(13px);
     color: #fff;
 
   }
