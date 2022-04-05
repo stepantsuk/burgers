@@ -1,15 +1,9 @@
 .header {
   width: 100%;
-  padding-top: rem(16px);
+  padding-top: rem(12px);
   display: flex;
   justify-content: space-between;
-  
   text-transform: uppercase;
-}
-
-.nav__list {
-  display: flex;
-  
 }
 
 .header__menu {
@@ -36,6 +30,9 @@
   }
   &__list {
     display: flex;
+    @include tablets {
+      display: none;
+    }
   }
   &__link {
     @include ubuntu(500);
