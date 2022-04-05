@@ -10,6 +10,16 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 8%;
+  @include tablets {
+    flex: 0.9;
+    width: 62%;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+  }
+  @include phones {
+    width: 80%;
+  }
 }
 
 .welcome__content-title {
@@ -19,19 +29,35 @@
   align-items: flex-start;
   width: 45%;
   margin-top: rem(70px);
+  @include tablets {
+    margin-top: rem(40px);
+    align-items: center;
+  }
 }
 
 .welcome__desc {
   @include lifehack();
-  color: $white;
   font-size: rem(65px);
+  line-height: 0.92;
+  letter-spacing: rem(-1.62px);
+  color: $white;
   margin-top: rem(15px);
+  @include tablets {
+    margin-top: 0;}
+  @include phones {
+    font-size: rem(50px);
+  }
 }
 
 .welcome__content-pic {
   margin-right: rem(15px);
-}
+  @include tablets {
+    margin-right: 0;
+  }
+};
 
-.container--welcome {
-  justify-content: flex-start;
+.welcome__content-pic, .welcome__content-title {
+  @include tablets {
+    width: 100%;
+  }
 }

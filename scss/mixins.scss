@@ -4,6 +4,8 @@
   @return $px / 16px * 1rem;
 }
 
+//fonts
+
 @mixin ubuntu ($weight: 300){
   font-family: 'ubuntu', Arial, sans-serif;
   font-weight: $weight;
@@ -22,6 +24,9 @@
   font-style: normal;
 }
 
+
+//styles
+
 @mixin circle($width, $color) {
   width: $width;
   height: $width;
@@ -34,6 +39,9 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+
+//position
 
 @mixin centered($axis: 'both') {
   position: absolute;
@@ -64,5 +72,37 @@
   @if ($axis == 'fully') {
     top: 0;
     bottom: 0;
+  }
+}
+
+// media
+
+@mixin desktop {
+  @media screen and (max-width: $desktop) {
+    @content;
+  }
+};
+
+@mixin laptop {
+  @media screen and (max-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: $phones) {
+    @content;
+  }
+}
+
+@mixin small-phones {
+  @media screen and (max-width: $small-phones) {
+    @content;
   }
 }
