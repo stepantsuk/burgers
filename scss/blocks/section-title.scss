@@ -21,4 +21,12 @@
       margin-bottom: rem(25px);
     }
   }
+  &--delivery {
+    margin-bottom: rem(45px);
+    text-align: center;
+    @include phones {
+      margin-bottom: rem(30px);
+      font-size: rem(50px);
+    }
+  }
 }
