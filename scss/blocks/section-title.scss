@@ -14,7 +14,11 @@
   }
 
   &--we-best {
+    margin-bottom: rem(55px);
     color: $dark-grey;
     text-align: center;
+    @include phones {
+      margin-bottom: rem(25px);
+    }
   }
 }

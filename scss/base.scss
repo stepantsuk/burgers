@@ -18,17 +18,18 @@ html {
   box-sizing: border-box;
   font-size: 16px;
 
-  @include tablets {
-    font-size: 15px;
-  }
+  // хз... может убрать размер шрифта для устройств
+  // @include tablets {
+  //   font-size: 15px;
+  // }
 
-  @include phones {
-    font-size: 14px;
-  }
+  // @include phones {
+  //   font-size: 14px;
+  // }
 
-  @include small-phones {
-    font-size: 12px;
-  }
+  // @include small-phones {
+  //   font-size: 12px;
+  // }
 }
 
 footer {
