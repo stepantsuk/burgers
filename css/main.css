@@ -506,10 +506,6 @@ img {
   margin-left: 0.3125rem;
 }
 
-.reviews-container {
-  height: 100%;
-}
-
 .reviews-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -523,6 +519,18 @@ img {
   width: 25%;
   height: 50%;
   position: relative;
+}
+@media screen and (max-width: 768px) {
+  .reviews-item {
+    width: 50%;
+    height: 25%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .reviews-item {
+    width: 50%;
+    height: 25%;
+  }
 }
 .reviews-item:hover .rewiews-description {
   opacity: 1;
@@ -555,6 +563,17 @@ img {
   transition: opacity 0.3s;
   background-color: rgba(20, 20, 20, 0.7);
 }
+@media screen and (max-width: 768px) {
+  .rewiews-description {
+    text-align: center;
+    padding: 8%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .rewiews-description {
+    padding: 10%;
+  }
+}
 
 .reviews-title {
   font-family: "gagalin", sans-serif;
@@ -564,15 +583,31 @@ img {
   color: #fff;
   margin-bottom: 1.875rem;
 }
+@media screen and (max-width: 768px) {
+  .reviews-title {
+    font-size: 1rem;
+    margin-bottom: 0.9375rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .reviews-title {
+    font-size: 1.5rem;
+  }
+}
 
 .reviews-text {
   font-family: "ubuntu", Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: #fff;
   margin-bottom: 15px;
   line-height: 1.71;
+}
+@media screen and (max-width: 480px) {
+  .reviews-text {
+    display: none;
+  }
 }
 
 .points {

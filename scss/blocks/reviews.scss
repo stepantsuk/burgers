@@ -1,7 +1,3 @@
-.reviews-container {
-  height: 100%;
-}
-
 .reviews-list {
   display: flex;
   flex-wrap: wrap;
@@ -12,12 +8,21 @@
   width: 25%;
   height: 50%;
   position: relative;
+  @include tablets {
+    width: 50%;
+    height: 25%;
+  };
+  @include phones {
+    width: 50%;
+    height: 25%;
+  };
   &:hover{
     .rewiews-description {
     opacity: 1;
     z-index: 2;
     }
-  }
+  };
+  
 }
 
 .reviews-pic {
@@ -49,6 +54,13 @@
   padding: 10%;
   transition: opacity .3s;
   background-color: rgba(#141414, .7);
+  @include tablets {
+   text-align: center;
+   padding: 8%; 
+  }
+  @include phones {
+    padding: 10%;
+  }
 }
 
 .reviews-title {
@@ -56,14 +68,24 @@
   font-size: rem(14px);
   color: $white;
   margin-bottom: rem(30px);
+  @include tablets {
+    font-size: rem(16px);
+    margin-bottom: rem(15px); 
+  }
+  @include phones {
+    font-size: rem(24px);
+  }
 }
 
 .reviews-text {
   @include ubuntu(300);
-  font-size: rem(13px);
+  font-size: rem(14px);
   color: $white;
   margin-bottom: 15px;
   line-height: 1.71;
+  @include phones {
+    display: none; 
+  }
 }
 
 
