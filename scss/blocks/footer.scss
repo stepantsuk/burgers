@@ -3,13 +3,22 @@
   @include bgcover();
   position: absolute;
   bottom: 0;
+  padding: rem(12px) 0;
   height: rem(60px);
+  @include phones {
+    height: rem(100px);
+    font-size: rem(12px);
+  }
 }
 
 .contacts-col {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include phones {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .contacts-row {

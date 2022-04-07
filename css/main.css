@@ -169,6 +169,17 @@ img {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+@media screen and (max-width: 480px) {
+  .container.container--footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 
 .header {
   width: 100%;
@@ -940,7 +951,14 @@ img {
   background-repeat: no-repeat;
   position: absolute;
   bottom: 0;
+  padding: 0.75rem 0;
   height: 3.75rem;
+}
+@media screen and (max-width: 480px) {
+  .footer {
+    height: 6.25rem;
+    font-size: 0.75rem;
+  }
 }
 
 .contacts-col {
@@ -954,6 +972,14 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+@media screen and (max-width: 480px) {
+  .contacts-col {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
 }
 
 .contacts-row {
