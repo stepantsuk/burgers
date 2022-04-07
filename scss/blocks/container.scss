@@ -6,14 +6,29 @@
   flex-direction: column;
   height: 100%;
   justify-content: center;
+
   &.container--welcome {
     justify-content: flex-start;
     padding-bottom: 5%;
   }
+
+  &.container--we {
+    padding-bottom: 12%;
+    @include phones {
+      padding-bottom: 7%;
+    }
+  }
+
   &.container--delivery {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+  }
+
+  &.container--footer {
+    flex-direction: row;
+    justify-content: space-between;
+    @include phones {
+      flex-direction: column;
+      align-items: center;
+    } 
   }
 }
