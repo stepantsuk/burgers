@@ -1,0 +1,58 @@
+.footer {
+  background: url('./../../img/bg/bg_footer.png');
+  @include bgcover();
+  position: absolute;
+  bottom: 0;
+  height: rem(60px);
+}
+
+.contacts-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contacts-row {
+  display: flex;
+  align-items: center;
+}
+
+.adress {
+  font-weight: bold;
+  //@include ubuntu(bold);
+}
+
+.phone {
+  font-weight: bold;
+}
+
+.phone-frame {
+  width: 12px;
+  height: 12px;
+  margin-right: rem(5px);
+}
+
+.phone-value {
+  display: flex;
+  align-items: center;
+  color: $orange;
+}
+
+.socials__item {
+  width: rem(21px);
+  height: rem(21px);
+  margin-right: rem(20px);
+  display: flex;
+  align-items: center;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.social__link {
+  
+}
+
+.socials__pic {
+  
+}

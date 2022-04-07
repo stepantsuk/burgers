@@ -20,9 +20,11 @@
   }
 
   &.container--delivery {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+  }
+
+  &.container--footer {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

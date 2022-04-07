@@ -82,6 +82,7 @@ img {
 .wrapper {
   width: 100%;
   min-height: 100%;
+  position: relative;
 }
 
 .section {
@@ -155,19 +156,18 @@ img {
   }
 }
 .container.container--delivery {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.container.container--footer {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .header {
@@ -924,4 +924,82 @@ img {
     margin-bottom: 1.875rem;
     font-size: 3.125rem;
   }
+}
+
+.map {
+  background: url(./../img/bg/bg_map.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer {
+  background: url("./../../img/bg/bg_footer.png");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0;
+  height: 3.75rem;
+}
+
+.contacts-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contacts-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.adress {
+  font-weight: bold;
+}
+
+.phone {
+  font-weight: bold;
+}
+
+.phone-frame {
+  width: 12px;
+  height: 12px;
+  margin-right: 0.3125rem;
+}
+
+.phone-value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #e45028;
+}
+
+.socials__item {
+  width: 1.3125rem;
+  height: 1.3125rem;
+  margin-right: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.socials__item:last-child {
+  margin-right: 0;
 }
