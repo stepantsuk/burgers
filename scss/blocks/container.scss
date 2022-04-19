@@ -9,6 +9,7 @@
 
   &.container--welcome {
     justify-content: flex-start;
+    position: relative;
     padding-bottom: 5%;
   }
 
@@ -30,5 +31,10 @@
       flex-direction: column;
       align-items: center;
     } 
+  }
+  &.container--burgers{
+    flex-direction: row;
+    align-items: center;
+    position: relative;
   }
 }

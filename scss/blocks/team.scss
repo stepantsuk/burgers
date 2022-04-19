@@ -1,0 +1,122 @@
+.team {
+  background-image: url(./../img/bg/bg_team.png);
+  @include bgcover();
+  position: relative;
+}
+
+.team__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  padding: 8%;
+  background-color: rgba(57, 59, 60, 0.93);
+  @include tablets {
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 20%;
+  }
+}
+
+.team__list {
+  display: flex;
+  flex-direction: column;
+  @include tablets {
+    align-items: center;
+  }
+}
+
+.member {
+  @include gagalin();
+  font-size: rem(14px);
+  margin-bottom: rem(35px);
+  padding-left: rem(18px);
+  width: 100%;
+  &--active {
+    & .member__link {
+      color: $yellow;
+      &:before {
+        transform: rotate(-180deg);
+      }
+    }
+    & .member__review {
+      height: 100px;
+      @include tablets {
+        height: 188px;
+      }
+    }
+  }
+  @include tablets {
+    font-size: rem(25px);
+    width: 75%;
+    padding-left: rem(0px);
+  }
+}
+
+.member__link {
+  color: $white;
+  display: inline-flex;
+  align-items: center;
+  
+  &:before {
+    content: "";
+    width: rem(9px);
+    border-top: rem(7px) solid $yellow;
+    border-bottom: none;
+    border-left: rem(7px) solid transparent;
+    border-right: rem(7px) solid transparent;
+    margin-right: rem(10px);
+  }
+}
+
+.member__review {
+  margin-top: rem(15px);
+  display: flex;
+  height: 0;
+  overflow: hidden;
+  transition: height .5s;
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+.member__pic {
+  width: rem(100px);
+  height: rem(100px);
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: rem(20px);
+  flex-shrink: 0;
+  @include tablets {
+    margin-right: rem(0px);
+  }
+}
+
+.member__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member__desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include ubuntu();
+}
+
+.member__position {
+  font-size: rem(14px);
+  font-weight: bold;
+}
+
+.member__text {
+  font-size: rem(14px);
+}

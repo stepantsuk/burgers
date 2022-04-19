@@ -1,0 +1,8 @@
+.burger-menu {
+  position: fixed;
+  top: 35px;
+  right: 30px;
+  width: rem(25px);
+  height: rem(5px);
+  border-radius: rem(5px);
+}

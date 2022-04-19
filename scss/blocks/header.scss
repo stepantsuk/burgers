@@ -6,12 +6,12 @@
   text-transform: uppercase;
 }
 
-.header__menu {
+.header__nav {
   display: flex;
   align-items: center;
 }
 
-.menu {
+.nav {
   margin-right: rem(15px);
   &__item {
     display: flex;

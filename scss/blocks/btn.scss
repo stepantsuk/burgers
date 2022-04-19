@@ -24,7 +24,7 @@
     transition: background-color .3s;
     &:hover {
       background-color: $dark-grey;
-    }}
+  }}
   &--order {
     background-color: $orange;
     @include ubuntu(500);
@@ -32,8 +32,17 @@
     color: $white;
     &:hover {
       background-color: #c1401e;
-    }  
-    }
+  }}
+  &--slider{
+    background-color: $orange;
+    font-size: rem(13px);
+    color: $white;
+    font-weight: 500;
+    &:hover {
+      background-color: #c1401e;
+  }
+  }
+
 }
 
 .clear{
