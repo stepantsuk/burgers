@@ -1,0 +1,73 @@
+.arrow {
+  display: block;
+  &--down {
+    @include centered('x');
+    bottom: rem(20px);
+  }
+  &--left, &--right {
+    @include centered(y);
+  }
+  &--left {
+    left: rem(-30px);
+
+    @include tablets {
+      left: rem(-40px);
+    }
+
+    @include phones {
+      left: 0;
+    }
+  }
+
+  &--right {
+    right: rem(-30px);
+
+    @include tablets {
+      right: rem(-40px);
+    }
+
+    @include phones {
+      right: 0;
+    }
+  }
+}
+
+.arrow__icon {
+  width: rem(27px);
+  height: rem(15px);
+  &--left{
+    transform: rotate(90deg);
+  }
+  &--right {
+    transform: rotate(-90deg);
+  }
+}
+
+
+
+
+
+// .arrow-scroll {
+//   @include centered('x');
+//   bottom: 40px;
+//   display: block;
+//   width: rem(29px);
+//   height: rem(14px);
+//   margin: 0 auto;
+//   background: url(./../img/icons/arrow_scroll.png) center / cover no-repeat;
+// }
+
+// .arrow-scroll-- {
+//   &left, &right {
+//     display: block;
+//     width: rem(29px);
+//     height: rem(14px);
+//     background: url(./../img/icons/arrow_scroll.png) center / cover no-repeat;
+//   }
+//   &left {
+//     transform: rotate(90deg);
+//   }
+//   &right {
+//     transform: rotate(-90deg);
+//   }
+// }

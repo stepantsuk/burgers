@@ -16,43 +16,43 @@
       <div class="container container--welcome">
         <header class="header">
           <a href='#' class="logo">
-            <img src="./img/logo/logo.png" alt="лого бургера" class="logo__icon">
+            <img src="./img/svg/logo.svg" alt="лого бургера" class="logo__icon">
           </a>
-          <div class="header__menu">
-            <nav class="menu">
-              <ul class="menu__list">
-                <li class="menu__item">
-                  <a href="#" class="menu__link">
+          <div class="header__nav">
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="#" class="nav__link">
                     о нас
                   </a>
                 </li>
-                <li class="menu__item">
-                  <a href="#" class="menu__link">
+                <li class="nav__item">
+                  <a href="#" class="nav__link">
                     бургеры
                   </a>
                 </li>
-                <li class="menu__item">
-                  <a href="#" class="menu__link">
+                <li class="nav__item">
+                  <a href="#" class="nav__link">
                     команда
                   </a>
                 </li>
-                <li class="menu__item">
-                  <a href="#" class="menu__link">
+                <li class="nav__item">
+                  <a href="#" class="nav__link">
                     меню
                   </a>
                 </li>
-                <li class="menu__item">
-                  <a href="#" class="menu__link">
+                <li class="nav__item">
+                  <a href="#" class="nav__link">
                     отзывы
                   </a>
                 </li>
-                <li class="menu__item">
-                  <a href="#" class="menu__link">
+                <li class="nav__item">
+                  <a href="#" class="nav__link">
                     как мы работаем
                   </a>
                 </li>
-                <li class="menu__item">
-                  <a href="#" class="menu__link">
+                <li class="nav__item">
+                  <a href="#" class="nav__link">
                     контакты
                   </a>
                 </li>
@@ -72,7 +72,11 @@
             <h2 class="welcome__desc">натуральные бургеры</h2>
           </div>
         </div>
-        <a href="" class="arrow-scroll"></a>
+        <a href="#" class="arrow arrow--down">
+          <svg class="arrow__icon arrow__icon--down">
+            <use xlink:href="./img/sprite.svg#arrow-scroll"></use>
+          </svg>
+        </a>
       </div>
     </section>
     <section class="section we-best">
@@ -81,7 +85,7 @@
         <ul class="we-best__list">
           <li class="we-best__item">
             <div class="we-best__pic">
-              <img class="we-best__img" src="./img/icons/meat.png" alt="">
+              <img class="we-best__img" src="./img/svg/meat.svg" alt="">
             </div>
             <div class="we-best__description">
               <h4 class="we-best__header">
@@ -94,7 +98,7 @@
           </li>
           <li class="we-best__item">
             <div class="we-best__pic">
-              <img class="we-best__img" src="./img/icons/hand.png" alt="">
+              <img class="we-best__img" src="./img/svg/hand.svg" alt="">
             </div>
             <div class="we-best__description">
               <h4 class="we-best__header">
@@ -108,7 +112,7 @@
           </li>
           <li class="we-best__item">
             <div class="we-best__pic">
-              <img class="we-best__img" src="./img/icons/natural.png" alt="">
+              <img class="we-best__img" src="./img/svg/natural.svg" alt="">
             </div>
             <div class="we-best__description">
               <h4 class="we-best__header">
@@ -122,7 +126,200 @@
         </ul>
       </div>
     </section>
-    <section class="section">
+    <section class="section burgers">
+      <div class="container container--burgers">
+        <a href="#" class="arrow arrow--left">
+          <svg class="arrow__icon arrow__icon--left">
+            <use xlink:href="./img/sprite.svg#arrow-scroll"></use>
+          </svg>
+        </a>
+        <div class="burgers__column burgers__content">
+          <div class="burgers__structure">
+            <div class="structure">
+              <div class="structure__pic">
+                <img src="./img/svg/burger.svg" alt="icon burger" class="structure__img">
+              </div>
+              <h5 class="structure__title">состав</h5>
+            </div>
+          </div>
+          <div class="food-value">
+            <div class="food-value__frame">
+              <div class="food-value__count">
+                1200
+              </div>
+            </div>
+            <div class="food-value__kcal">
+              ккал
+            </div>
+          </div>
+          <div class="burgers__content-pic">
+            <div class="burgers__pic">
+              <img src="./img/burgers-slider/burger_1.png" class="burgers__img" alt="burger slider">
+            </div>
+          </div>
+          <div class="burgers__content-desc">
+            <h1 class="section-title slider-title">
+              Dark beef burger
+            </h1>
+            <p class="content-desc__text">
+              Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра
+              эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса
+              чураско.
+            </p>
+            <div class="slider__order">
+              <div class="price">
+                <div class="price__value">
+                  500
+                </div>
+                <div class="price__currency">
+                  рублей
+                </div>
+              </div>
+              <button class="btn btn--slider" type="button">
+                заказать
+              </button>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="arrow arrow--right">
+          <svg class="arrow__icon arrow__icon--right">
+            <use xlink:href="./img/sprite.svg#arrow-scroll"></use>
+          </svg>
+        </a>
+      </div>
+    </section>
+    <section class="section team">
+      <div class="team__content">
+        <h1 class="section-title section-title--team">
+          Команда
+        </h1>
+        <ul class="team__list">
+          <li class="member">
+            <a class="member__link" href="#">Дэниэл Редклиф</a>
+            <div class="member__review">
+              <div class="member__pic">
+                <img class="member__img" src="./img/content/team_member.png" alt="member__img">
+              </div>
+              <div class="member__desc">
+                <h3 class="member__position">
+                  Оператор
+                </h3>
+                <p class="member__text">
+                  С радостью поможет подобрать идеальный бургер и оформить заказ.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="member member--active">
+            <a class="member__link" href="#">Ричард Джеймс</a>
+            <div class="member__review">
+              <div class="member__pic">
+                <img class="member__img" src="./img/content/team_member.png" alt="member__img">
+              </div>
+              <div class="member__desc">
+                <h3 class="member__position">
+                  Оператор
+                </h3>
+                <p class="member__text">
+                  С радостью поможет подобрать идеальный бургер и оформить заказ.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="member">
+            <a class="member__link" href="#">Джейк Финн</a>
+            <div class="member__review">
+              <div class="member__pic">
+                <img class="member__img" src="./img/content/team_member.png" alt="member__img">
+              </div>
+              <div class="member__desc">
+                <h3 class="member__position">
+                  Оператор
+                </h3>
+                <p class="member__text">
+                  С радостью поможет подобрать идеальный бургер и оформить заказ.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="member">
+            <a class="member__link" href="#">Николай Иванов</a>
+            <div class="member__review">
+              <div class="member__pic">
+                <img class="member__img" src="./img/content/team_member.png" alt="member__img">
+              </div>
+              <div class="member__desc">
+                <h3 class="member__position">
+                  Оператор
+                </h3>
+                <p class="member__text">
+                  С радостью поможет подобрать идеальный бургер и оформить заказ.
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="section menu">
+      <h1 class="section-title section-title--menu">
+        меню
+      </h1>
+      <ul class="menu__accordeon">
+        <li class="menu__accordeon-item submenu submenu--active">
+          <a href="" class="submenu__link submenu__link--meat">
+            <div class="section-title section-title--submenu submenu__title">для мясоедов</div>
+          </a>
+          <div class="submenu__block">
+            <div class="submenu__desc">
+              <p>Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует
+                конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман.
+                Наш современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив.
+                Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр.
+                Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует
+                конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман.
+                Наш современник стал особенно чутко относиться к слову.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="menu__accordeon-item submenu">
+          <a href="" class="submenu__link submenu__link--veg">
+            <div class="section-title section-title--submenu submenu__title">для мясоедов</div>
+          </a>
+          <div class="submenu__block">
+            <div class="submenu__desc">
+              <p>Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует
+                конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман.
+                Наш современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив.
+                Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр.
+                Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует
+                конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман.
+                Наш современник стал особенно чутко относиться к слову.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="menu__accordeon-item submenu">
+          <a href="" class="submenu__link submenu__link--diet">
+            <div class="section-title section-title--submenu submenu__title">для мясоедов</div>
+          </a>
+          <div class="submenu__block">
+            <div class="submenu__desc">
+              <p>Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует
+                конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман.
+                Наш современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив.
+                Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр.
+                Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует
+                конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман.
+                Наш современник стал особенно чутко относиться к слову.
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="section reviews">
       <ul class="reviews-list">
         <li class="reviews-item">
           <div class="reviews-pic">
@@ -281,9 +478,9 @@
           </div>
           <div class="phone">
             <a href="tel:+78123771377" class="phone-value">
-            <div class="phone-frame">
-              <img src="./img/icons/phone.png" alt="phone" class="phone-pic">
-            </div>
+              <svg class="phone-frame">
+                <use xlink:href="./img/sprite.svg#phone"></use>
+              </svg>
               +7 (812) 377-13-77
             </a>
           </div>
@@ -291,22 +488,30 @@
         <ul class="contacts-row socials">
           <li class="socials__item">
             <a href="https://vk.com" class="social__link">
-              <img src="./img/icons/vk.png" alt="vk" class="socials__pic">
+              <svg class="socials__pic socials__pic--vk">
+                <use xlink:href="./img/sprite.svg#vk"></use>
+              </svg>
             </a>
           </li>
           <li class="socials__item">
             <a href="https://ru-ru.facebook.com/" class="social__link">
-              <img src="./img/icons/fb_hover.png" alt="fb" class="socials__pic">
+              <svg class="socials__pic socials__pic--fb">
+                <use xlink:href="./img/sprite.svg#fb"></use>
+              </svg>
             </a>
           </li>
           <li class="socials__item">
             <a href="https://www.instagram.com" class="social__link">
-              <img src="./img/icons/inst.png" alt="inst" class="socials__pic">
+              <svg class="socials__pic socials__pic--inst">
+                <use xlink:href="./img/sprite.svg#inst"></use>
+              </svg>
             </a>
           </li>
           <li class="socials__item">
             <a href="https://twitter.com/" class="social__link">
-              <img src="./img/icons/twitter.png" alt="tw" class="socials__pic">
+              <svg class="socials__pic socials__pic--twitter">
+                <use xlink:href="./img/sprite.svg#twitter"></use>
+              </svg>
             </a>
           </li>
         </ul>
@@ -343,6 +548,9 @@
         </li>
       </ul>
     </div>
+    <a href="#" class="burger-menu">
+      <div class="burger-menu-dash"></div>
+    </a>
   </div>
 </body>
 

@@ -1,0 +1,83 @@
+.menu {
+  background-image: url(./../../img/bg/bg_menu.png);
+  @include bgcover();
+  position: relative;
+}
+
+.menu__accordeon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;  
+  display: flex;
+  max-width: 100%;
+}
+
+.submenu {
+  display: flex;
+}
+
+.submenu__link {
+  @include bgcover();
+  width: rem(80px);
+  flex-shrink: 0;
+
+  position: relative;
+
+  @include tablets {
+    width: rem(60px);
+  }
+
+  @include phones {
+    width: rem(40px);
+  }
+  
+}
+
+.submenu__link--meat {
+  background-image: url(./../img/bg/bg_menu_item1.png);
+}
+
+.submenu__link--veg {
+  background-image: url(./../img/bg/bg_menu_item2.png);
+}
+
+.submenu__link--diet {
+  background-image: url(./../img/bg/bg_menu_item3.png);
+}
+
+.submenu__block {
+  width: 0;
+  transition: width .3s;
+}
+
+.submenu__desc {
+  line-height: 2;
+  background-color: rgba(#383c3e, .93);
+  height: 100%;
+  overflow: hidden;
+  padding: 7% 6%;
+  color:rgba(255,255,255, 0);
+  transition: color .3s;
+  
+  @include phones {
+    font-size: rem(12px);
+  }
+}
+
+.submenu--active {
+  & .submenu__title  {
+    color: $yellow;
+  }
+
+  & .submenu__desc {
+    color:rgba(255,255,255, 1);
+  }
+
+  & .submenu__block {
+    width: 550px;
+    @include phones {
+      width: 360px;
+    }
+  }
+}

@@ -36,8 +36,8 @@
 }
 
 .phone-frame {
-  width: 12px;
-  height: 12px;
+  width: rem(12px);
+  height: rem(12px);
   margin-right: rem(5px);
 }
 
@@ -58,10 +58,26 @@
   }
 }
 
-.social__link {
-  
-}
-
 .socials__pic {
-  
+  fill-opacity: .3;
+  transition: fill-opacity .3s;
+  &:hover {
+    fill-opacity: 1;
+  }
+  &--vk {
+    width: rem(23px);
+    height: rem(13px);
+  }
+  &--fb {
+    width: rem(20px);
+    height: rem(20px);
+  }
+  &--inst {
+    width: rem(20px);
+    height: rem(20px);
+  }
+  &--twitter {
+    width: rem(20px);
+    height: rem(16px);
+  }
 }
