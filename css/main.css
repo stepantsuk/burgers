@@ -1720,14 +1720,6 @@ img {
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
-.member--active .member__review {
-  height: 100px;
-}
-@media screen and (max-width: 768px) {
-  .member--active .member__review {
-    height: 188px;
-  }
-}
 @media screen and (max-width: 768px) {
   .member {
     font-size: 1.5625rem;
@@ -1784,6 +1776,7 @@ img {
   height: 6.25rem;
   border-radius: 50%;
   overflow: hidden;
+  margin-top: 1px;
   margin-right: 1.25rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
