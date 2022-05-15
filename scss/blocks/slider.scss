@@ -2,6 +2,9 @@
   position: fixed;
   top : rem(90px);
   right: rem(50px);
+  @include tablets {
+    display: none;
+  }
 }
 
 .points-item {
