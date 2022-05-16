@@ -22,7 +22,7 @@ const verticalAccordeon = () => {
       let activeItem = document.querySelector(".member--active");
       if (activeItem) {
         let memberReview = activeItem.querySelector(".member__review");
-        console.log(memberReview);
+        //console.log(memberReview);
         memberReview.style.height = 0 + "px";
         activeItem.classList.remove("member--active")
       }
@@ -37,3 +37,71 @@ const verticalAccordeon = () => {
 }
 
 verticalAccordeon();
+
+/// слайдер вариант 1
+
+// let sliderLeft = document.querySelector("#sliderLeft");
+// let slider = document.querySelector("#slider");
+// let sliderRight = document.querySelector("#sliderRight");
+
+// let moveSlider = (direction, e) => {
+//   e.preventDefault();
+//   if (direction === "right") {
+//     slider.appendChild(slider.firstElementChild);
+//   } if (direction === "left") {
+//     slider.insertBefore(slider.lastElementChild, slider.firstElementChild);
+//   }
+// };
+
+// sliderLeft.addEventListener("click", (e)=> {
+//   moveSlider("left", e)
+// });
+
+// sliderRight.addEventListener("click", (e)=> {
+//   moveSlider("right", e)
+// })
+
+/// слайдер вариант 2
+
+let sliderLeft = document.querySelector("#sliderLeft");
+let slider = document.querySelector("#slider");
+let sliderRight = document.querySelector("#sliderRight");
+let sliderWidth = parseInt(getComputedStyle(slider).width);
+let sliderItemCounter = slider.children.length;
+
+let moveSliderRight = (e) => {
+  e.preventDefault();
+  let sliderPosition = parseInt(getComputedStyle(slider).right);
+  
+
+  if (sliderPosition < (sliderItemCounter - 1) * sliderWidth) {
+    slider.style.right = sliderPosition + sliderWidth + "px";
+  }
+
+  if (sliderPosition == (sliderItemCounter - 1) * sliderWidth) {
+    slider.style.right = 0 + "px";
+  }
+};
+
+let moveSliderLeft = (e) => {
+  e.preventDefault();
+  let sliderPosition = parseInt(getComputedStyle(slider).right);
+
+  if (sliderPosition > 0) {
+    slider.style.right = sliderPosition - sliderWidth + "px";
+  }
+
+  if (sliderPosition == 0) {
+    slider.style.right = (sliderItemCounter - 1) * sliderWidth + "px";
+  }
+};
+
+window.addEventListener("resize", () => {
+  let sliderPosition = 0;
+  slider.style.right = sliderPosition;
+  sliderWidth = parseInt(getComputedStyle(slider).width);
+});
+
+sliderLeft.addEventListener("click", (e) => { moveSliderLeft(e) });
+
+sliderRight.addEventListener("click", (e) => { moveSliderRight(e) });
