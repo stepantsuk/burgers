@@ -81,6 +81,10 @@
   &:hover .structure__dropdown {
     display: flex;
   }
+
+  &:hover .structure__title {
+    opacity: 1;
+  }
 }
 
 .structure__pic {
@@ -97,7 +101,7 @@
   @include gagalin();
   font-size: rem(14px);
   margin-top: rem(10px);
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .structure__dropdown {
