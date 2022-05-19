@@ -17,7 +17,7 @@
 
   @include tablets {
     flex-direction: column;
-    padding-top: rem(90px);
+    padding-top: rem(80px);
     padding-bottom: 0;
   }
 }
@@ -29,6 +29,10 @@
 
   @include tablets {
     width: 100%;
+  }
+
+  @include phones {
+    width: 80%;
   }
 }
 
@@ -199,7 +203,7 @@
   }
 
   @include phones {
-    right: 0;
+    right: rem(16px);
   }
 }
 

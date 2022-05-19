@@ -83,6 +83,7 @@ img {
   width: 100%;
   min-height: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .section {
@@ -141,27 +142,27 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.container.container--welcome {
+.container--welcome {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
   position: relative;
   padding-bottom: 5%;
 }
-.container.container--we {
+.container--we {
   padding-bottom: 12%;
 }
 @media screen and (max-width: 480px) {
-  .container.container--we {
+  .container--we {
     padding-bottom: 7%;
   }
 }
-.container.container--delivery {
+.container--delivery {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-.container.container--footer {
+.container--footer {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -171,7 +172,7 @@ img {
           justify-content: space-between;
 }
 @media screen and (max-width: 480px) {
-  .container.container--footer {
+  .container--footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -181,7 +182,7 @@ img {
             align-items: center;
   }
 }
-.container.container--burgers {
+.container--burgers {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -192,12 +193,12 @@ img {
   position: relative;
 }
 @media screen and (max-width: 768px) {
-  .container.container--burgers {
+  .container--burgers {
     width: 70%;
   }
 }
 @media screen and (max-width: 480px) {
-  .container.container--burgers {
+  .container--burgers {
     width: 95%;
   }
 }
@@ -1063,7 +1064,7 @@ img {
   .slider-title {
     width: 80%;
     margin: 0 auto 1.875rem;
-    font-size: 3.75rem;
+    font-size: 3.125rem;
   }
 }
 
@@ -1313,6 +1314,11 @@ img {
   top: 0.75rem;
   left: 1.1875rem;
 }
+@media screen and (max-width: 480px) {
+  .hamburger-menu .logo {
+    left: 0.75rem;
+  }
+}
 
 .burgers {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f9b43b), color-stop(48%, #eb8c38), color-stop(74%, #f9b43b));
@@ -1345,7 +1351,7 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding-top: 5.625rem;
+    padding-top: 5rem;
     padding-bottom: 0;
   }
 }
@@ -1359,6 +1365,12 @@ img {
   .burgers__content-pic,
 .burgers__content-desc {
     width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .burgers__content-pic,
+.burgers__content-desc {
+    width: 80%;
   }
 }
 
@@ -1577,7 +1589,7 @@ img {
 }
 @media screen and (max-width: 480px) {
   .food-value {
-    right: 0;
+    right: 1rem;
   }
 }
 
