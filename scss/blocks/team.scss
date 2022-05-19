@@ -44,13 +44,12 @@
         transform: rotate(-180deg);
       }
     }
-    // без добавления высоты напряму в элемент, высота здесь за счет класса, но если контент объемный, то он не поместиться в заданною высоту. Чтобы этого избежать используй scrollHeight в js
-    // & .member__review {
-    //   height: 101px;
-    //   @include tablets {
-    //     height: 188px;
-    //   }
-    // }
+    & .member__review {
+      height: 100px;
+      @include tablets {
+        height: 188px;
+      }
+    }
   }
   @include tablets {
     font-size: rem(25px);
@@ -93,7 +92,6 @@
   height: rem(100px);
   border-radius: 50%;
   overflow: hidden;
-  margin-top: 1px;
   margin-right: rem(20px);
   flex-shrink: 0;
   @include tablets {
