@@ -11,45 +11,123 @@ let toggleMenu = (e) => {
 
 icon.addEventListener("click", toggleMenu);
 
-/// модальное окно отзывы "modal-review"
+/// модальное окно только для отзвов "modal-review" 
 
-let modalReviews = document.querySelector("#modal-review");
-//let btnReviews = document.querySelectorAll("#btn--reviews");
-let modalForm = document.querySelector("#modal-form");
-let reviewsList = document.querySelector(".reviews-list");
-let contentReview = document.querySelector('#reviewOverlay').innerHTML;
+// let modalReviews = document.querySelector("#modal-review");
+// //let btnReviews = document.querySelectorAll("#btn--reviews");
+// let modalForm = document.querySelector("#modal-form");
+// let reviewsList = document.querySelector(".reviews-list");
+// let contentReview = document.querySelector('#reviewOverlay').innerHTML;
 
-let closeModalOverlay = (e) => {
-  e.preventDefault();
-  modalReviews.classList.remove("modal--active");
-  document.querySelector("body").classList.remove("locked");
-};
+// let closeModalOverlay = (e) => {
+//   e.preventDefault();
+//   modalReviews.classList.remove("modal--active");
+//   document.querySelector("body").classList.remove("locked");
+// };
 
-let openModalReview = (e) => {
-  e.preventDefault();
-  if (e.target.classList.contains("btn--reviews")) {
-    modalReviews.classList.add("modal--active");
-    document.querySelector("body").classList.add("locked");
-    document.querySelector(".modal__inner--review").innerHTML = contentReview;
+// let openModalReview = (e) => {
+//   e.preventDefault();
+//   if (e.target.classList.contains("btn--reviews")) {
+//     modalReviews.classList.add("modal--active");
+//     document.querySelector("body").classList.add("locked");
+//     document.querySelector(".modal__inner--review").innerHTML = contentReview;
 
-    let closeModalBtn = document.createElement("a");
-    closeModalBtn.classList.add("modal-review__close");
-    closeModalBtn.setAttribute("href", "#")
-    document.querySelector(".modal__inner--review").appendChild(closeModalBtn);
-    closeModalBtn.addEventListener("click", closeModalOverlay);
-    modalReviews.addEventListener("click", (e) => {
-      if (e.target == modalReviews) { closeModalOverlay(e) };
-    });
+//     let closeModalBtn = document.createElement("a");
+//     closeModalBtn.classList.add("modal-review__close");
+//     closeModalBtn.setAttribute("href", "#")
+//     document.querySelector(".modal__inner--review").appendChild(closeModalBtn);
+//     closeModalBtn.addEventListener("click", closeModalOverlay);
+//     modalReviews.addEventListener("click", (e) => {
+//       if (e.target == modalReviews) { closeModalOverlay(e) };
+//     });
 
-  };
-};
+//   };
+// };
 
-reviewsList.addEventListener("click", openModalReview);
+// reviewsList.addEventListener("click", openModalReview);
 
 // btnReviews.forEach((item) => {
 //   item.addEventListener("click", openModalReview)
 // })
 
+
+/// модалбное окно, общая функция
+
+let overlay = (() => {
+
+  let closeModalBtn = document.createElement("a");
+  closeModalBtn.classList.add("modal-review__close");
+  closeModalBtn.setAttribute("href", "#");
+
+  let closeMsgBtn = document.createElement("button");
+  closeMsgBtn.classList.add("btn", "btn--modal");
+  closeMsgBtn.setAttribute("type", "button");
+
+
+  let closeOverlay = (modalID) => {
+    let modalTarget = document.querySelector(modalID);
+
+    modalTarget.classList.remove("modal--active");
+    document.querySelector("body").classList.remove("locked");
+  };
+
+  let openOverlay = (modalID, content) => {
+
+    let modalTarget = document.querySelector(modalID);
+    let innerModalTarget = modalTarget.querySelector('.modal__inner');
+
+    modalTarget.classList.add("modal--active");
+    document.querySelector("body").classList.add("locked");
+
+    if (content) {
+      innerModalTarget.innerHTML = content;
+    };
+
+    if (modalID === "#modal-review") {
+      innerModalTarget.appendChild(closeModalBtn);
+      closeModalBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeOverlay(modalID)
+      }
+      );
+
+    };
+
+    if (modalID === '#modal-form') {
+      innerModalTarget.appendChild(closeMsgBtn);
+      closeMsgBtn.textContent = 'закрыть';
+      closeMsgBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeOverlay(modalID)
+      });
+    };
+
+    modalTarget.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (e.target == modalTarget) { closeOverlay(modalID) };
+    });
+
+  };
+
+  return {
+    open: openOverlay,
+    close: closeOverlay,
+  }
+})();
+
+let openReview = (template) => {
+  let reviewList = document.querySelector(".reviews-list");
+  reviewList.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains("btn--reviews")) {
+      console.log("yes");
+      overlay.open("#modal-review", template);
+    }
+  });
+};
+
+let contentReview = document.querySelector("#reviewOverlay").innerHTML;
+openReview(contentReview);
 
 /// вертикальный аккордеон
 
@@ -210,7 +288,7 @@ let sendAjax = (form) => {
   xhr.responseType = 'json';
   xhr.open("POST", url);
   xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-  xhr.send(formData);
+  xhr.send(formAjax);
 
   return xhr;
 };
@@ -220,7 +298,8 @@ let sendAjax = (form) => {
 let submitForm = (e) => {
   e.preventDefault();
   let form = e.target;
-  if (!form.elements.name.value && !form.elements.phone.value && !form.elements.comments.value) {
+  console.log(e.target);
+  if (form.elements.name.value && form.elements.phone.value && form.elements.comments.value) {
     let request = sendAjax(form);
     request.addEventListener("load", (e) => {
       if (request.status >= 400) {

@@ -533,14 +533,14 @@ img {
   padding: 0.625rem 0.9375rem;
   border-radius: 0.3125rem;
   text-transform: uppercase;
-}
-.btn--header {
   background-color: #e45028;
   font-family: "ubuntu", Arial, sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 0.8125rem;
   color: #fff;
+}
+.btn--header {
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
@@ -554,24 +554,11 @@ img {
 }
 .btn--reviews {
   background-color: rgba(47, 50, 52, 0.8);
-  font-family: "ubuntu", Arial, sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 0.8125rem;
-  color: #fff;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
 .btn--reviews:hover {
   background-color: #2f3234;
-}
-.btn--order {
-  background-color: #e45028;
-  font-family: "ubuntu", Arial, sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 0.8125rem;
-  color: #fff;
 }
 .btn--order:hover {
   background-color: #c1401e;
@@ -584,6 +571,9 @@ img {
 }
 .btn--slider:hover {
   background-color: #c1401e;
+}
+.btn--modal {
+  margin-top: 1.25rem;
 }
 
 .clear {
@@ -1976,6 +1966,20 @@ img {
   .modal__inner--review {
     width: 96%;
   }
+}
+.modal__inner--form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.25rem;
+  font-size: 0.875rem;
 }
 
 .modal-review__title {

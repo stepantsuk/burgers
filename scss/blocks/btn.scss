@@ -1,51 +1,59 @@
-.btn { //у кнопки лучше не задавать размеры, чтобы она была более гибкой, ее размер будет определяться от текста внутри и паддингов. Если кнопка это <a> то надо задавай в стилях задавть блочное или инлайн блочное поведение. Ну и от потребностей надо обнулять стили, то есть если сслыка то text-decoration none 
+.btn {
+  //у кнопки лучше не задавать размеры, чтобы она была более гибкой, ее размер будет определяться от текста внутри и паддингов. Если кнопка это <a> то надо задавай в стилях задавть блочное или инлайн блочное поведение. Ну и от потребностей надо обнулять стили, то есть если сслыка то text-decoration none 
   // width: 98px;
   // height: 36px;
   padding: rem(10px) rem(15px);
   border-radius: rem(5px);
   text-transform: uppercase;
+  background-color: $orange;
+  @include ubuntu(500);
+  font-size: rem(13px);
+  color: $white;
+
   &--header {
-    background-color: $orange;
-    @include ubuntu(500);
-    font-size: rem(13px);
-    color: $white;
     transition: background-color .3s;
     @include tablets {
       margin-right: rem(90px);
     }
-      &:hover {
-    background-color: #c1401e;
-  }}
-  &--reviews {
-    background-color:$dark-grey08;
-    @include ubuntu(500);
-    font-size: rem(13px);
-    color: $white;
-    transition: background-color .3s;
-    &:hover {
-      background-color: $dark-grey;
-  }}
-  &--order {
-    background-color: $orange;
-    @include ubuntu(500);
-    font-size: rem(13px);
-    color: $white;
+
     &:hover {
       background-color: #c1401e;
-  }}
-  &--slider{
+    }
+  }
+
+  &--reviews {
+    background-color: $dark-grey08;
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: $dark-grey;
+    }
+  }
+
+  &--order {
+    &:hover {
+      background-color: #c1401e;
+    }
+  }
+
+  &--slider {
     background-color: $orange;
     font-size: rem(13px);
     color: $white;
     font-weight: 500;
+
     &:hover {
       background-color: #c1401e;
+    }
   }
+
+  &--modal {
+    margin-top: rem(20px);
   }
 
 }
 
-.clear{
+.clear {
   @include ubuntu();
   color: $white;
   margin-left: rem(5px);
