@@ -67,8 +67,8 @@
   color: $white;
   margin-bottom: rem(50px);
   @include tablets {
-    width: 80%;
-    margin: 0 auto rem(30px);
-    font-size: rem(60px);
+    width: 100%;
+    margin: 0 auto;
+    font-size: rem(45px);
   }
 }

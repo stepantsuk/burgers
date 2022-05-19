@@ -17,7 +17,6 @@
 
   @include tablets {
     flex-direction: column;
-    padding-top: rem(90px);
     padding-bottom: 0;
   }
 }
@@ -26,10 +25,6 @@
 .burgers__content-desc {
   width: 50%;
   position: relative;
-
-  @include tablets {
-    width: 100%;
-  }
 }
 
 .burgers__content-pic {
@@ -38,12 +33,14 @@
   @include tablets {
     margin-right: rem(0px);
     margin-bottom: rem(30px);
+    width: 80%;
   }
 }
 
 .burgers__content-desc {
   @include tablets {
     text-align: center;
+    width: 100%;
   }
 }
 
@@ -224,7 +221,8 @@
 .slider__order {
   display: flex;
   align-items: flex-end;
-  @include tablets{
+
+  @include tablets {
     justify-content: center;
   }
 }
