@@ -1,5 +1,5 @@
 /// модальное окно в адаптиве, бургер меню
-
+/// 
 let icon = document.querySelector("#hamburger-menu-icon");
 let menu = document.querySelector("#hamburger-menu");
 
@@ -10,6 +10,7 @@ let toggleMenu = (e) => {
 };
 
 icon.addEventListener("click", toggleMenu);
+
 
 /// модальное окно только для отзвов "modal-review" 
 
@@ -316,3 +317,4 @@ let submitForm = (e) => {
 
 let orderForm = document.querySelector("#form");
 orderForm.addEventListener("submit", submitForm);
+

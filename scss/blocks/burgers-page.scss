@@ -2,24 +2,12 @@
   background-image: linear-gradient(to bottom, $yellow 0%, #eb8c38 48%, $yellow 74%);
 }
 
-.slider-frame {
-  overflow: hidden;
-}
-
-.products {
-  display: flex;
-  position: relative;
-}
-
 .burgers__column {
   display: flex;
-  justify-content: center;
   align-items: center;
   position: relative;
   padding-top: 5vw;
   padding-bottom: 7vw;
-  flex-shrink: 0;
-  width: 100%;
 
   &-left,
   &-right {
@@ -78,10 +66,6 @@
   &:hover .structure__dropdown {
     display: flex;
   }
-
-  &:hover .structure__title {
-    opacity: 1;
-  }
 }
 
 .structure__pic {
@@ -98,7 +82,7 @@
   @include gagalin();
   font-size: rem(14px);
   margin-top: rem(10px);
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .structure__dropdown {
