@@ -5,6 +5,7 @@
     bottom: rem(20px);
   }
   &--left, &--right {
+    z-index: 10;
     @include centered(y);
   }
   &--left {

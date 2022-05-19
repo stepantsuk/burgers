@@ -19,7 +19,6 @@
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding: 20%;
   }
 }
 
@@ -53,9 +52,8 @@
     // }
   }
   @include tablets {
-    font-size: rem(25px);
-    width: 75%;
-    padding-left: rem(0px);
+    font-size: rem(18px);
+    width: 85%;
   }
 }
 
@@ -84,7 +82,6 @@
   @include tablets {
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
   }
 }
 

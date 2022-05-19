@@ -7,24 +7,24 @@
   height: 100%;
   justify-content: center;
 
-  &.container--welcome {
+  &--welcome {
     justify-content: flex-start;
     position: relative;
     padding-bottom: 5%;
   }
 
-  &.container--we {
+  &--we {
     padding-bottom: 12%;
     @include phones {
       padding-bottom: 7%;
     }
   }
 
-  &.container--delivery {
+  &--delivery {
     align-items: center;
   }
 
-  &.container--footer {
+  &--footer {
     flex-direction: row;
     justify-content: space-between;
     @include phones {
@@ -32,9 +32,9 @@
       align-items: center;
     } 
   }
-  &.container--burgers{
-    flex-direction: row;
-    align-items: center;
+  &--burgers{
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     @include tablets {
       width: 70%;

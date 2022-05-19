@@ -148,7 +148,8 @@ const verticalAccordeon = () => {
         let currentMember = e.target.closest(".member");
         currentMember.classList.add("member--active");
 
-        currentMember.querySelector(".member__review").style.height = currentMember.querySelector(".member__review").scrollHeight + 'px';
+        let currentMemberReview = currentMember.querySelector(".member__review");
+        currentMemberReview.style.height = currentMemberReview.scrollHeight + 'px';
       }
     })
   })
@@ -280,7 +281,7 @@ let sendAjax = (form) => {
   let formAjax = new FormData();
   formAjax.append("name", form.elements.name.value);
   formAjax.append("phone", form.elements.phone.value);
-  formAjax.append("comments", form.elements.comments.value);
+  formAjax.append("comment", form.elements.comments.value);
   formAjax.append("to", "test@test.com");
 
   let url = "https://webdev-api.loftschool.com/sendmail";
