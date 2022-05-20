@@ -53,6 +53,11 @@
     position: absolute;
     top: rem(12px);
     left: rem(19px);
+    & {
+      @include phones {
+        left: rem(12px);
+      }
+    }
   }
 
 }
