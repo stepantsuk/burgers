@@ -1188,8 +1188,8 @@ img {
 
 .hamburger-menu-icon {
   position: fixed;
-  top: 35px;
-  right: 30px;
+  top: 2.1875rem;
+  right: 1.875rem;
   width: 1.5625rem;
   height: 1.5625rem;
   display: none;
@@ -1218,6 +1218,8 @@ img {
   display: block;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
 }
 .hamburger-menu-icon__dash:before {
   top: 0;
@@ -1233,20 +1235,12 @@ img {
   background-color: #c1c2c2;
 }
 .hamburger-menu-icon--active .hamburger-menu-icon__dash:before {
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
   -webkit-transform: rotate(45deg) translate(3px, -1px);
           transform: rotate(45deg) translate(3px, -1px);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 .hamburger-menu-icon--active .hamburger-menu-icon__dash:after {
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
   -webkit-transform: rotate(-45deg) translate(0px, -1px);
           transform: rotate(-45deg) translate(0px, -1px);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .hamburger-menu {
@@ -1313,6 +1307,11 @@ img {
   position: absolute;
   top: 0.75rem;
   left: 1.1875rem;
+}
+@media screen and (max-width: 480px) {
+  .hamburger-menu .logo {
+    left: 0.75rem;
+  }
 }
 
 .burgers {

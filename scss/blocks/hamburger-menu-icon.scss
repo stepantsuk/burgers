@@ -1,7 +1,7 @@
 .hamburger-menu-icon {
   position: fixed;
-  top: 35px;
-  right: 30px;
+  top: rem(35px);
+  right: rem(30px);
   width: rem(25px);
   height: rem(25px);
   display: none;
@@ -30,6 +30,7 @@
     position: absolute;
     display: block;
     transition: .3s;
+    transform-origin: 0 0;
   }
 
   &:before {
@@ -53,15 +54,15 @@
     }
 
     &:before {
-      transform-origin: 0 0;
+      // transform-origin: 0 0;
       transform: rotate(45deg) translate(3px, -1px);
-      transition: .3s;
+      //transition: .3s;
     }
 
     &:after {
-      transform-origin: 0 0;
+      // transform-origin: 0 0;
       transform: rotate(-45deg) translate(0px, -1px);
-      transition: .3s;
+      //transition: .3s;
     }
   }
 }
