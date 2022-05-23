@@ -1,15 +1,94 @@
 /// модальное окно в адаптиве, бургер меню
 
-let icon = document.querySelector("#hamburger-menu-icon");
-let menu = document.querySelector("#hamburger-menu");
+let onBurgerMenu = (() => {
 
-let toggleMenu = (e) => {
-  e.preventDefault();
-  icon.classList.toggle("hamburger-menu-icon--active");
-  menu.classList.toggle("hamburger-menu--active");
-};
+  let icon = document.querySelector("#hamburger-menu-icon");
+  let menu = document.querySelector("#hamburger-menu");
+  let logoBurger = menu.querySelector(".logo");
+  let itemList = menu.querySelector(".nav__list").children;
 
-icon.addEventListener("click", toggleMenu);
+  console.log(itemList);
+
+  // let counter = 0;
+
+  // let slideInUp = (arg) => {
+  //   arg.classList.toggle("slideInUp");
+  //   console.log(arg);
+  // };
+
+  // let startMenuAnimation = () => {
+  //   for (let i = 0; i < itemList.length; i++) {
+      
+  //     setTimeout(slideInUp, 1000, itemList[i])
+      
+  //     // itemList[i].classList.toggle("slideInUp");
+  //     // setTimeout(startMenuAnimation, 1000);
+  //     // console.log(i);
+  //   }
+  // };
+
+  
+  let counter = 0;
+
+  startMenu = () => {
+    let element = itemList[counter];
+
+    element.classList.toggle('slideInUp');
+    counter++;
+    if (counter < itemList.length) {
+      setTimeout(startMenu, 50);
+      console.log(counter)
+    }
+    if (counter === itemList.length) {
+      counter = 0;
+    }
+    
+  }
+
+  let startMenuAnima = () => {
+    startMenu();
+  }
+
+  
+
+  // let startMenuAnimation = function startMenu() {
+  //   let element = itemList[counter];
+
+  //   element.classList.toggle('slideInUp');
+  //   counter++;
+  //   if (counter < itemList.length) {
+  //     setTimeout(startMenu, 100);
+  //     console.log(counter)
+  //   }
+  //   if (counter === itemList.length) {
+  //     counter = 0;
+  //   }
+  // }
+
+  let toggleMenu = (e) => {
+    e.preventDefault();
+    icon.classList.toggle("hamburger-menu-icon--active");
+    menu.classList.toggle("hamburger-menu--active");
+    document.querySelector("body").classList.toggle("locked");
+    startMenuAnima();
+  };
+
+  let listeners = () => {
+    icon.addEventListener("click", toggleMenu);
+    logoBurger.addEventListener("click", toggleMenu);
+    menu.addEventListener("click", (e) => {
+      if (e.target.classList.contains("nav__link")) {
+        toggleMenu(e);
+      };
+    });
+  }
+
+  return {
+    open: listeners,
+  };
+})();
+
+onBurgerMenu.open()
 
 /// модальное окно только для отзвов "modal-review" 
 

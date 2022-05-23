@@ -1278,6 +1278,9 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 .hamburger-menu .nav__item:last-child {
   margin-bottom: 0;
@@ -1286,6 +1289,9 @@ img {
   margin: 1.25rem auto;
   width: 0.4375rem;
   height: 0.4375rem;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 .hamburger-menu .nav__link {
   font-weight: 400;
@@ -1306,6 +1312,37 @@ img {
   .hamburger-menu .logo {
     left: 0.75rem;
   }
+}
+
+@-webkit-keyframes slideInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+.slideInUp,
+.slideInUp:before {
+  -webkit-animation: slideInUp 0.5s;
+          animation: slideInUp 0.5s;
 }
 
 .burgers {
@@ -1685,9 +1722,9 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
