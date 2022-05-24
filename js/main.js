@@ -30,7 +30,7 @@ let onBurgerMenu = (() => {
   
   let counter = 0;
 
-  startMenu = () => {
+  let startMenu = () => {
     let element = itemList[counter];
 
     element.classList.toggle('slideInUp');
@@ -130,7 +130,7 @@ onBurgerMenu.open()
 // })
 
 
-/// модалбное окно, общая функция
+/// модальное окно, общая функция
 
 let overlay = (() => {
 
@@ -259,54 +259,54 @@ verticalAccordeon();
 //   moveSlider("right", e)
 // })
 
-/// слайдер вариант 2 за счет изменения style.right c iief
+/// ИСПОЛЬЗУЙ ЕГО ЕСЛИ НЕ JQ слайдер вариант 2 за счет изменения style.right c iief
 
-let applySlider = (() => {
-  let sliderLeft = document.querySelector("#sliderLeft");
-  let slider = document.querySelector("#slider");
-  let sliderRight = document.querySelector("#sliderRight");
-  let sliderWidth = parseInt(getComputedStyle(slider).width);
-  let sliderItemCounter = slider.children.length
+// let applySlider = (() => {
+//   let sliderLeft = document.querySelector("#sliderLeft");
+//   let slider = document.querySelector("#slider");
+//   let sliderRight = document.querySelector("#sliderRight");
+//   let sliderWidth = parseInt(getComputedStyle(slider).width);
+//   let sliderItemCounter = slider.children.length
 
-  let moveSlider = (direction) => {
+//   let moveSlider = (direction) => {
 
-    direction.addEventListener("click", (e) => {
-      e.preventDefault();
-      let sliderPosition = parseInt(getComputedStyle(slider).right);
+//     direction.addEventListener("click", (e) => {
+//       e.preventDefault();
+//       let sliderPosition = parseInt(getComputedStyle(slider).right);
 
-      if (sliderPosition < (sliderItemCounter - 1) * sliderWidth && direction == sliderRight) {
-        slider.style.right = sliderPosition + sliderWidth + "px";
-      }
+//       if (sliderPosition < (sliderItemCounter - 1) * sliderWidth && direction == sliderRight) {
+//         slider.style.right = sliderPosition + sliderWidth + "px";
+//       }
 
-      if (sliderPosition == (sliderItemCounter - 1) * sliderWidth && direction == sliderRight) {
-        slider.style.right = 0 + "px";
-      }
+//       if (sliderPosition == (sliderItemCounter - 1) * sliderWidth && direction == sliderRight) {
+//         slider.style.right = 0 + "px";
+//       }
 
-      if (sliderPosition > 0 && direction == sliderLeft) {
-        slider.style.right = sliderPosition - sliderWidth + "px";
-      }
+//       if (sliderPosition > 0 && direction == sliderLeft) {
+//         slider.style.right = sliderPosition - sliderWidth + "px";
+//       }
 
-      if (sliderPosition == 0 && direction == sliderLeft) {
-        slider.style.right = (sliderItemCounter - 1) * sliderWidth + "px";
-      }
+//       if (sliderPosition == 0 && direction == sliderLeft) {
+//         slider.style.right = (sliderItemCounter - 1) * sliderWidth + "px";
+//       }
 
-      window.addEventListener("resize", () => {
-        sliderPosition = 0;
-        slider.style.right = sliderPosition;
-        sliderWidth = parseInt(getComputedStyle(slider).width);
-      });
-    });
-  };
+//       window.addEventListener("resize", () => {
+//         sliderPosition = 0;
+//         slider.style.right = sliderPosition;
+//         sliderWidth = parseInt(getComputedStyle(slider).width);
+//       });
+//     });
+//   };
 
-  let addListeners = () => {
-    moveSlider(sliderRight);
-    moveSlider(sliderLeft);
-  };
+//   let addListeners = () => {
+//     moveSlider(sliderRight);
+//     moveSlider(sliderLeft);
+//   };
 
-  return { init: addListeners };
-})();
+//   return { init: addListeners };
+// })();
 
-applySlider.init();
+// applySlider.init();
 
 /// слайдер вариант 3 за счет изменения style.right
 

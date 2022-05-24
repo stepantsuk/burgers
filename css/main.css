@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body {
   width: 100%;
@@ -202,7 +203,7 @@ img {
 }
 @media screen and (max-width: 480px) {
   .container--burgers {
-    width: 95%;
+    width: 90%;
   }
 }
 
@@ -1393,6 +1394,7 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-top: 5.625rem;
     padding-bottom: 0;
   }
 }
@@ -1405,12 +1407,19 @@ img {
 
 .burgers__content-pic {
   margin-right: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 @media screen and (max-width: 768px) {
   .burgers__content-pic {
     margin-right: 0rem;
     margin-bottom: 1.875rem;
-    width: 80%;
+    width: 100%;
+    height: 32vh;
   }
 }
 
@@ -1443,6 +1452,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 10;
 }
 .burgers__structure:hover {
   background-color: #e35028;
@@ -2032,3 +2042,52 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.slick-slider {
+  min-width: 0;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+/* Стрелка */
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 0px;
+  background: url("./../../img/svg/arrow-scroll.svg");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1.6875rem;
+  height: 0.9375rem;
+  z-index: 10;
+}
+
+/* Стрелка влево */
+.slick-arrow.slick-prev {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  left: -1.25rem;
+}
+
+/* Стрелка вправо */
+.slick-arrow.slick-next {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  right: -1.25rem;
+}
+
+/* Стрелка не активная */
