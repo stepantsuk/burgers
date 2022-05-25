@@ -7,7 +7,7 @@ let onBurgerMenu = (() => {
   let logoBurger = menu.querySelector(".logo");
   let itemList = menu.querySelector(".nav__list").children;
 
-  console.log(itemList);
+  // console.log(itemList);
 
   // let counter = 0;
 
@@ -18,16 +18,15 @@ let onBurgerMenu = (() => {
 
   // let startMenuAnimation = () => {
   //   for (let i = 0; i < itemList.length; i++) {
-      
+
   //     setTimeout(slideInUp, 1000, itemList[i])
-      
+
   //     // itemList[i].classList.toggle("slideInUp");
   //     // setTimeout(startMenuAnimation, 1000);
   //     // console.log(i);
   //   }
   // };
 
-  
   let counter = 0;
 
   let startMenu = () => {
@@ -42,14 +41,11 @@ let onBurgerMenu = (() => {
     if (counter === itemList.length) {
       counter = 0;
     }
-    
   }
 
   let startMenuAnima = () => {
     startMenu();
   }
-
-  
 
   // let startMenuAnimation = function startMenu() {
   //   let element = itemList[counter];
@@ -169,7 +165,6 @@ let overlay = (() => {
         closeOverlay(modalID)
       }
       );
-
     };
 
     if (modalID === '#modal-form') {
@@ -235,6 +230,78 @@ const verticalAccordeon = () => {
 }
 
 verticalAccordeon();
+
+/// горизонтальный аккордеон Jquery
+
+// $(document).ready(function () {
+//   $(".menu__accordeon-item").on("click", function (e) {
+//     e.preventDefault();
+//     console.log(e.target);
+//     let activeLink = $(".submenu--active");
+//     //console.log(activeLink[0]);
+//     if (activeLink.length > 0 && e.target !== activeLink.find(".submenu__block")[0]) {
+//       activeLink.removeClass("submenu--active");
+//       activeLink.find(".submenu__block").css("width", "0px");
+//       console.log("child", activeLink.find(".submenu__block")[0]);
+//       // console.log();
+//     };
+//     if (activeLink.length === 0 || e.currentTarget !== activeLink[0]) {
+//       //console.log("you are here");
+//       $(e.currentTarget).addClass("submenu--active");
+//       $(e.currentTarget).find(".submenu__block").css("width", "550px")
+//     };
+//   })
+// })
+
+/// горизонтальный аккордеон Jquery через submenu__link
+
+$(document).ready(function () {
+  let windowWidth = $(window).width();
+  let mobileWidth = $(window).width() - $(".submenu").length * $(".submenu").width() + "px";
+  
+  $(".submenu__link").on("click", function (e) {
+    console.log(mobileWidth);
+    e.preventDefault();
+    let activeLink = $(".submenu--active");
+    console.log(activeLink.find(".submenu__link")[0]);
+    //console.log(activeLink[0]);
+    if (activeLink.length > 0) {
+      activeLink.find(".submenu__block").css("width", "0px");
+      activeLink.removeClass("submenu--active");
+      // console.log("child", activeLink.find(".submenu__block")[0]);
+      // console.log();
+    };
+    if (activeLink.length === 0 || e.currentTarget !== activeLink.find(".submenu__link")[0]) {
+      //console.log("you are here");
+      $(e.currentTarget).closest(".submenu").addClass("submenu--active");
+      if (windowWidth > 480) {
+        $(e.currentTarget).next(".submenu__block").css("width", "550px")
+      } 
+      else {
+        // let mobileWidth = $(window).width() - $(".submenu").length * $(".submenu").width() + "px";
+        $(e.currentTarget).next(".submenu__block").css("width", mobileWidth)
+      }
+    };
+  })
+  
+})
+
+// let startToWork = function (item) {
+//   item.on("click", function (e) {
+//     e.preventDefault();
+//     console.log(e.currentTarget);
+//     let activeLink = $(".submenu--active");
+//     console.log(activeLink);
+//     if (activeLink.length > 0) {
+//       activeLink.removeClass("submenu--active");
+//       console.log($(".menu__accordeon-item").hasClass("submenu--active"));
+//     };
+//     if (activeLink.length === 0 || e.currentTarget !== activeLink) {
+//       console.log("you are here");
+//       $(e.currentTarget).addClass("submenu--active");
+//     };
+//   })
+// };
 
 /// слайдер вариант 1
 

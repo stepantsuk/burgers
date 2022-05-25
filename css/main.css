@@ -1026,7 +1026,7 @@ img {
 @media screen and (max-width: 768px) {
   .section-title--menu {
     top: 8%;
-    left: 3%;
+    left: 13%;
   }
 }
 .section-title--submenu {
@@ -1955,14 +1955,6 @@ img {
 }
 .submenu--active .submenu__desc {
   color: white;
-}
-.submenu--active .submenu__block {
-  width: 550px;
-}
-@media screen and (max-width: 480px) {
-  .submenu--active .submenu__block {
-    width: 360px;
-  }
 }
 
 .modal {
