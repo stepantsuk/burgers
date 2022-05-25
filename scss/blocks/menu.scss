@@ -74,10 +74,10 @@
     color:rgba(255,255,255, 1);
   }
 
-  & .submenu__block {
-    width: 550px;
-    @include phones {
-      width: 360px;
-    }
-  }
+  // & .submenu__block {
+  //   width: 550px;
+  //   @include phones {
+  //     width: 360px;
+  //   }
+  // }
 }

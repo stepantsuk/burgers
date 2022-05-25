@@ -25,6 +25,8 @@
 
     &__item {
       flex-direction: column;
+      opacity: 0;
+      animation-fill-mode: forwards;
 
       &:last-child {
         margin-bottom: 0;
@@ -34,6 +36,8 @@
         margin: rem(20px) auto;
         width: rem(7px);
         height: rem(7px);
+        opacity: 0;
+        animation-fill-mode: forwards;
       }
     }
 
@@ -60,4 +64,21 @@
     }
   }
 
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slideInUp,
+.slideInUp:before {
+  animation: slideInUp .5s;
 }
