@@ -258,7 +258,7 @@ verticalAccordeon();
 $(document).ready(function () {
   let windowWidth = $(window).width();
   let mobileWidth = $(window).width() - $(".submenu").length * $(".submenu").width() + "px";
-  
+
   $(".submenu__link").on("click", function (e) {
     console.log(mobileWidth);
     e.preventDefault();
@@ -276,14 +276,14 @@ $(document).ready(function () {
       $(e.currentTarget).closest(".submenu").addClass("submenu--active");
       if (windowWidth > 480) {
         $(e.currentTarget).next(".submenu__block").css("width", "550px")
-      } 
+      }
       else {
         // let mobileWidth = $(window).width() - $(".submenu").length * $(".submenu").width() + "px";
         $(e.currentTarget).next(".submenu__block").css("width", mobileWidth)
       }
     };
   })
-  
+
 })
 
 // let startToWork = function (item) {
@@ -462,3 +462,95 @@ let submitForm = (e) => {
 
 let orderForm = document.querySelector("#form");
 orderForm.addEventListener("submit", submitForm);
+
+/// one page scroll
+
+let onePageScroll = (function () {
+  let detect = new MobileDetect(window.navigator.userAgent)
+let isMobile = detect.mobile();
+
+let sections = $(".section");
+let contentView = $("#content");
+let isAction = false;
+
+let performTransition = function (sectionIndex) {
+  if (!isAction) {
+    isAction = true;
+    let scrollHeight = sectionIndex * (-100) + "%";
+
+    sections.eq(sectionIndex).addClass("is-active").siblings().removeClass("is-active");
+    contentView.css({
+      transform: `translateY(${scrollHeight})`,
+    });
+
+    $(".points-item").eq(sectionIndex).addClass("points-item--active").siblings().removeClass("points-item--active");
+
+    setTimeout(function () {
+      isAction = false;
+    }, 350)
+  }
+};
+
+$("[data-to-scroll]").on("click", function (e) {
+  e.preventDefault;
+  performTransition($(e.target).data("to-scroll"));
+})
+
+let defineSections = function () {
+  let activeSection = sections.filter(".is-active");
+  return {
+    activeSection: activeSection,
+    nextSection: activeSection.next(),
+    prevSection: activeSection.prev(),
+  }
+};
+
+let scrollToSection = function (direction) {
+
+  let sectionsList = defineSections();
+
+  if (direction === "up" && sectionsList.nextSection.length > 0) {
+    performTransition(sectionsList.nextSection.index())
+  }
+  if (direction === "down" && sectionsList.prevSection.length > 0) {
+    performTransition(sectionsList.prevSection.index())
+  };
+
+};
+
+$(".wrapper").on({
+  wheel: function (e) {
+    let deltaY = e.originalEvent.deltaY;
+    let direction = deltaY > 0 ? "up" : "down";
+    scrollToSection(direction);
+  },
+  touchmove: function (e) {
+    e.preventDefault();
+  }
+})
+
+if (isMobile) {
+  $(window).swipe({
+    swipe: function (event, direction) {
+      scrollToSections(direction);
+    }
+  });
+}
+
+$(document).on('keydown', function (e) {
+  let section = defineSections(sections);
+  switch (e.keyCode) {
+    case 40:
+      if (section.nextSection.length) {
+        performTransition(section.nextSection.index());
+      }
+      break;
+    case 38:
+      if (section.prevSection.length) {
+        performTransition(section.prevSection.index());
+      }
+      break;
+  }
+});
+})();
+

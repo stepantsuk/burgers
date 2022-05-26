@@ -27,6 +27,15 @@ html {
   font-size: 16px;
 }
 
+#content {
+  height: 100%;
+  min-height: 40.625rem;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
 footer {
   position: relative;
   width: 100%;
@@ -86,12 +95,15 @@ img {
 
 .wrapper {
   width: 100%;
-  min-height: 100%;
+  min-width: 300px;
+  height: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .section {
-  height: 100vh;
+  height: 100%;
+  position: relative;
 }
 
 @font-face {
@@ -151,7 +163,6 @@ img {
       -ms-flex-pack: start;
           justify-content: flex-start;
   position: relative;
-  padding-bottom: 5%;
 }
 .container--we {
   padding-bottom: 12%;
@@ -295,7 +306,6 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 8%;
 }
 @media screen and (max-width: 768px) {
   .welcome__content {
