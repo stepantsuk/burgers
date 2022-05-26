@@ -554,3 +554,25 @@ $(document).on('keydown', function (e) {
 });
 })();
 
+/// burgerStructure, dropdown
+
+$(".burgers__structure").on({
+  mouseenter : function(e) {
+    $(e.currentTarget).addClass("burgers__structure--active")
+  },
+  mouseleave : function(e) {
+    $(e.currentTarget).removeClass("burgers__structure--active")
+  },
+})
+
+let abc;
+
+$(".structure__cross").on({
+  click : function (e) {
+    abc = e.currentTarget;
+    console.log(e.currentTarget);
+    e.preventDefault;
+    $(e.currentTarget).closest(".burgers__structure").removeClass("burgers__structure--active")
+  }
+})
+

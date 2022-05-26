@@ -16,8 +16,8 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding-top: 5vw;
-  padding-bottom: 7vw;
+  padding-top: 8vw;
+  padding-bottom: 8vw;
   flex-shrink: 0;
   width: 100%;
 
@@ -79,15 +79,15 @@
   align-items: center;
   z-index: 10;
 
-  &:hover {
+  &--active {
     background-color: $red;
   }
 
-  &:hover .structure__dropdown {
+  &--active .structure__dropdown {
     display: flex;
   }
 
-  &:hover .structure__title {
+  &--active .structure__title {
     opacity: 1;
   }
 }
@@ -134,7 +134,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  padding: 6% 10%;
+  padding: 10%;
   position: relative;
 
   @include tablets {
@@ -152,14 +152,10 @@
 }
 
 .structure__cross--link {
-  display: none;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-
-  @include tablets {
-    display: flex;
-  }
+  display: flex;
 
   &::before {
     content: "";
