@@ -467,100 +467,100 @@ orderForm.addEventListener("submit", submitForm);
 
 let onePageScroll = (function () {
   let detect = new MobileDetect(window.navigator.userAgent)
-let isMobile = detect.mobile();
+  let isMobile = detect.mobile();
 
-let sections = $(".section");
-let contentView = $("#content");
-let isAction = false;
+  let sections = $(".section");
+  let contentView = $("#content");
+  let isAction = false;
 
-let performTransition = function (sectionIndex) {
-  if (!isAction) {
-    isAction = true;
-    let scrollHeight = sectionIndex * (-100) + "%";
+  let performTransition = function (sectionIndex) {
+    if (!isAction) {
+      isAction = true;
+      let scrollHeight = sectionIndex * (-100) + "%";
 
-    sections.eq(sectionIndex).addClass("is-active").siblings().removeClass("is-active");
-    contentView.css({
-      transform: `translateY(${scrollHeight})`,
-    });
+      sections.eq(sectionIndex).addClass("is-active").siblings().removeClass("is-active");
+      contentView.css({
+        transform: `translateY(${scrollHeight})`,
+      });
 
-    $(".points-item").eq(sectionIndex).addClass("points-item--active").siblings().removeClass("points-item--active");
+      $(".points-item").eq(sectionIndex).addClass("points-item--active").siblings().removeClass("points-item--active");
 
-    setTimeout(function () {
-      isAction = false;
-    }, 350)
-  }
-};
-
-$("[data-to-scroll]").on("click", function (e) {
-  e.preventDefault;
-  performTransition($(e.target).data("to-scroll"));
-})
-
-let defineSections = function () {
-  let activeSection = sections.filter(".is-active");
-  return {
-    activeSection: activeSection,
-    nextSection: activeSection.next(),
-    prevSection: activeSection.prev(),
-  }
-};
-
-let scrollToSection = function (direction) {
-
-  let sectionsList = defineSections();
-
-  if (direction === "up" && sectionsList.nextSection.length > 0) {
-    performTransition(sectionsList.nextSection.index())
-  }
-  if (direction === "down" && sectionsList.prevSection.length > 0) {
-    performTransition(sectionsList.prevSection.index())
+      setTimeout(function () {
+        isAction = false;
+      }, 350)
+    }
   };
 
-};
+  $("[data-to-scroll]").on("click", function (e) {
+    e.preventDefault;
+    performTransition($(e.target).data("to-scroll"));
+  })
 
-$(".wrapper").on({
-  wheel: function (e) {
-    let deltaY = e.originalEvent.deltaY;
-    let direction = deltaY > 0 ? "up" : "down";
-    scrollToSection(direction);
-  },
-  touchmove: function (e) {
-    e.preventDefault();
+  let defineSections = function () {
+    let activeSection = sections.filter(".is-active");
+    return {
+      activeSection: activeSection,
+      nextSection: activeSection.next(),
+      prevSection: activeSection.prev(),
+    }
+  };
+
+  let scrollToSection = function (direction) {
+
+    let sectionsList = defineSections();
+
+    if (direction === "up" && sectionsList.nextSection.length > 0) {
+      performTransition(sectionsList.nextSection.index())
+    }
+    if (direction === "down" && sectionsList.prevSection.length > 0) {
+      performTransition(sectionsList.prevSection.index())
+    };
+
+  };
+
+  $(".wrapper").on({
+    wheel: function (e) {
+      let deltaY = e.originalEvent.deltaY;
+      let direction = deltaY > 0 ? "up" : "down";
+      scrollToSection(direction);
+    },
+    touchmove: function (e) {
+      e.preventDefault();
+    }
+  })
+
+  if (isMobile) {
+    $(window).swipe({
+      swipe: function (event, direction) {
+        scrollToSections(direction);
+      }
+    });
   }
-})
 
-if (isMobile) {
-  $(window).swipe({
-    swipe: function (event, direction) {
-      scrollToSections(direction);
+  $(document).on('keydown', function (e) {
+    let section = defineSections(sections);
+    switch (e.keyCode) {
+      case 40:
+        if (section.nextSection.length) {
+          performTransition(section.nextSection.index());
+        }
+        break;
+      case 38:
+        if (section.prevSection.length) {
+          performTransition(section.prevSection.index());
+        }
+        break;
     }
   });
-}
-
-$(document).on('keydown', function (e) {
-  let section = defineSections(sections);
-  switch (e.keyCode) {
-    case 40:
-      if (section.nextSection.length) {
-        performTransition(section.nextSection.index());
-      }
-      break;
-    case 38:
-      if (section.prevSection.length) {
-        performTransition(section.prevSection.index());
-      }
-      break;
-  }
-});
 })();
 
 /// burgerStructure, dropdown
 
 $(".burgers__structure").on({
-  mouseenter : function(e) {
+  mouseenter: function (e) {
     $(e.currentTarget).addClass("burgers__structure--active")
   },
-  mouseleave : function(e) {
+  mouseleave: function (e) {
     $(e.currentTarget).removeClass("burgers__structure--active")
   },
 })
@@ -568,11 +568,253 @@ $(".burgers__structure").on({
 let abc;
 
 $(".structure__cross").on({
-  click : function (e) {
+  click: function (e) {
     abc = e.currentTarget;
     console.log(e.currentTarget);
     e.preventDefault;
     $(e.currentTarget).closest(".burgers__structure").removeClass("burgers__structure--active")
   }
 })
+
+/////////////////////////////Видео Плеер//////////////////////////////////////
+
+let video;
+let durationControl;
+let soundControl;
+let intervalId;
+
+// документ полностью загружен
+$().ready(function () {
+
+  video = document.getElementById("player");
+
+  // вешаем обработчик события onclick на тег video
+  video.addEventListener('click', playStop);
+
+  // обработчики событий для кнопок play
+  let playButtons = document.querySelectorAll(".play");
+  for (let i = 0; i < playButtons.length; i++) {
+    playButtons[i].addEventListener('click', playStop);
+  }
+
+  // обработчик событий для кнопки динамик
+  let micControl = document.getElementById("volume__mute");
+  micControl.addEventListener('click', soundOf)
+
+  // обработчики событий для ползунка продолжительности видео
+  durationControl = document.getElementById("durationLevel");
+  durationControl.addEventListener('mousedown', stopInterval);
+  // durationControl.addEventListener('click',setVideoDuration);
+  durationControl.addEventListener('mouseup', setVideoDuration);
+
+  durationControl.min = 0;
+  durationControl.value = 0;
+
+  // обработчики событий для ползунка громокости
+  soundControl = document.getElementById("soundLevel");
+  // soundControl.addEventListener('click', changeSoundVolume);
+  soundControl.addEventListener('mouseup', changeSoundVolume);
+
+  // задаем максимальные и минимальные значения громокости
+  soundControl.min = 0;
+  soundControl.max = 10;
+  // присваиваем ползунку максимальное значение
+  soundControl.value = soundControl.max;
+
+  //обрабатываем окончание видео
+  video.addEventListener('ended', function () {
+    $(".video-player__play").toggleClass("video-player__play--active");
+    video.currentTime = 0;
+  }, false);
+});
+/*
+ Воспроизведение видео
+*/
+function playStop() {
+  // показывает или скрывает белую кнопку play
+  $(".video-player__play").toggleClass("video-player__play--active");
+  // присваиваем ползунку продолжительности максимальное значение равное продолжительности нашего видео (в секундах)
+  durationControl.max = video.duration;
+
+  // проверим стоит ли видео на паузе, если да то продолжим воспроизведение. Если, наоборот, проигрывается, то остановим.
+  if (video.paused) {
+    // video.webkitRequestFullScreen(); //возможность открыть в полноэкранном режиме
+    // запускаем видео
+    video.play();
+    intervalId = setInterval(updateDuration, 1000 / 66)
+
+  } else {
+    // video.webkitExitFullscreen(); //выйти из полноэкранного режима
+    // останавливаем видео
+    video.pause();
+    clearInterval(intervalId);
+
+  }
+}
+
+function stopInterval() {
+  video.pause();
+  clearInterval(intervalId);
+}
+/*
+    Реализует возможность перемотки нашего видео
+*/
+function setVideoDuration() {
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+  video.currentTime = durationControl.value;
+  intervalId = setInterval(updateDuration, 1000 / 66);
+}
+/*
+  Функция для обновления позиции ползунка продолжительности видео.   
+*/
+function updateDuration() {
+  durationControl.value = video.currentTime;
+  // console.log(video.currentTime)
+}
+/*
+    Управление звуком
+*/
+function soundOf() {
+  /*
+      Делаем проверку уровня громкости. 
+      Если у нас нашего видео есть звук, то мы его выключаем. 
+      Предварительно запомнив текущую позицию громкости в переменную soundLevel
+  */
+  if (video.volume === 0) {
+    video.volume = soundLevel;
+    soundControl.value = soundLevel * 10;
+  } else {
+    /*
+        Если у нашего видео нет звука, то выставляем уровень громкости на прежний уровень.
+        Хранится в перменной soundLevel
+    */
+    soundLevel = video.volume;
+    video.volume = 0;
+    soundControl.value = 0;
+  }
+}
+/*
+    Управление звуком видео
+*/
+function changeSoundVolume() {
+  /*
+      Св-во volume может принимать значения от 0 до 1
+      Делим на 10 для того что бы, была возможность более точной регулировки видео. 
+       video.volume 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9  1 
+ soundControl.value 0   1   2   3   4   5   6   7   8   9  10
+      */
+
+  video.volume = soundControl.value / 10;
+  // console.log(video.volume)
+}
+
+/// yandex map вариант раз
+
+// ymaps.ready(init);
+// function init() {
+//   let myMap = new ymaps.Map('map', {
+//     center: [51.662588, 39.202302],
+//     zoom: 16,
+//     controls: ['zoomControl'],
+//     behaviors: ['drag']
+//   });
+
+//   let pointsGeo = [[51.660848, 39.202281], [51.664741, 39.205147], [51.666020, 39.203111]];
+
+//   let markerDesc = {
+//     hintContent: 'твои бургеры здесь',
+//     balloonContent: 'Ничего себе, вот это да !'
+//   };
+
+//   let markerPreSet = {
+//     iconLayout: 'default#image',
+//     iconImageHref: './img/svg/map-marker.svg',
+//     iconImageSize: [46, 58],
+//     iconImageOffset: [-26, -58],
+//   };
+
+//   for (let i = 0; i < pointsGeo.length; i++) {
+//     let myPlacemark = [];
+//     myPlacemark[i] = new ymaps.Placemark(pointsGeo[i], markerDesc, markerPreSet);
+//     myMap.geoObjects.add(myPlacemark[i])
+//   };
+
+//   myMap.geoObjects.add(new ymaps.Placemark(pointsGeo[0], markerDesc, markerPreSet))
+
+// }
+
+
+/// yandex map вариант два
+
+
+ymaps.ready(init);
+
+let placemarks = [
+  {
+    latitude: 51.660848, 
+    longitude: 39.202281,
+    hintContent: 'Mr. Burger №1',
+    balloonContent: 'Лучшие бургеры в городе!',
+  },
+  {
+    latitude: 51.664741, 
+    longitude: 39.20514,
+    hintContent: 'Mr. Burger №2',
+    balloonContent: 'Лучшие бургеры в городе!',
+  },
+  {
+    latitude: 51.666020, 
+    longitude: 39.203111,
+    hintContent: 'Mr. Burger №3',
+    balloonContent: 'Лучшие бургеры в городе!',
+  },
+  {
+    latitude: 51.664280, 
+    longitude: 39.1979481,
+    hintContent: 'Mr. Burger №4',
+    balloonContent: 'Лучшие бургеры в городе!',
+  },
+],
+  geoObjects = [];
+
+function init() {
+  let myMap = new ymaps.Map('map', {
+    center: [51.662588, 39.202302],
+    zoom: 16,
+    controls: ['zoomControl'],
+    behaviors: ['drag']
+  });
+  for (let i = 0; i < placemarks.length; i++) {
+    geoObjects[i] = new ymaps.Placemark([placemarks[i].latitude, placemarks[i].longitude], {
+      hintContent: placemarks[i].hintContent,
+      balloonContent: placemarks[i].balloonContent
+    },
+      {
+        iconLayout: 'default#image',
+        iconImageHref: './img/svg/map-marker.svg',
+        iconImageSize: [46, 58],
+        iconImageOffset: [-23, -58]
+      });
+  };
+
+  let clusterer = new ymaps.Clusterer({
+    clusterIcons: [
+      {
+        href: './img/svg/logo.svg',
+        size: [98, 74],
+        offset: [0, 0]
+      }
+    ],
+    clusterIconContentLayout: null
+  });
+
+  clusterer.add(geoObjects)
+  myMap.geoObjects.add(clusterer);
+}
+
+
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -25,22 +25,22 @@
               <nav class="nav">
                 <ul class="nav__list">
                   <li class="nav__item">
-                    <a href="#" class="nav__link">
+                    <a href="#" class="nav__link" data-to-scroll="1">
                       о нас
                     </a>
                   </li>
                   <li class="nav__item">
-                    <a href="#" class="nav__link" data-to-scroll="1">
+                    <a href="#" class="nav__link" data-to-scroll="2">
                       бургеры
                     </a>
                   </li>
                   <li class="nav__item">
-                    <a href="#" class="nav__link" data-to-scroll="2">
+                    <a href="#" class="nav__link" data-to-scroll="3">
                       команда
                     </a>
                   </li>
                   <li class="nav__item">
-                    <a href="#" class="nav__link" data-to-scroll="3">
+                    <a href="#" class="nav__link" data-to-scroll="4">
                       меню
                     </a>
                   </li>
@@ -943,7 +943,7 @@
                       рублей
                     </div>
                   </div>
-                  <button class="btn btn--slider" type="button">
+                  <button class="btn btn--slider" type="button" data-to-scroll="7">
                     заказать
                   </button>
                 </div>
@@ -1073,7 +1073,7 @@
                       рублей
                     </div>
                   </div>
-                  <button class="btn btn--slider" type="button">
+                  <button class="btn btn--slider" type="button" data-to-scroll="7">
                     заказать
                   </button>
                 </div>
@@ -1202,7 +1202,7 @@
                       рублей
                     </div>
                   </div>
-                  <button class="btn btn--slider" type="button">
+                  <button class="btn btn--slider" type="button" data-to-scroll="7">
                     заказать
                   </button>
                 </div>
@@ -1333,7 +1333,7 @@
                       рублей
                     </div>
                   </div>
-                  <button class="btn btn--slider" type="button">
+                  <button class="btn btn--slider" type="button" data-to-scroll="7">
                     заказать
                   </button>
                 </div>
@@ -1463,7 +1463,7 @@
                       рублей
                     </div>
                   </div>
-                  <button class="btn btn--slider" type="button">
+                  <button class="btn btn--slider" type="button" data-to-scroll="7">
                     заказать
                   </button>
                 </div>
@@ -1744,6 +1744,29 @@
           </li>
         </ul>
       </section>
+      <section class="section video">
+        <div class="container container--video">
+          <h2 class="section-title section-title--video">как мы работаем</h2>
+          <div class="video-player">
+            <div class="video-player__frame">
+              <video poster="./img/content/Player-pic.png" id="player">
+                <source src="./video/burger.mp4" type="video/mp4" >
+              </video>
+              <img src="./img/icons/Play.png" alt="play" class="play video-player__play">
+            </div>
+            <div class="video-player__toolbar">
+              <div class="duration">
+                <img src="./img/icons/Play-gray.png" alt="play" class="play duration__play">
+                <input type="range" id="durationLevel" class="duration__length" min="0">
+              </div>
+              <div class="volume">
+                <img src="./img/icons/Volume-gray.png" alt="volume" id="volume__mute" class="volume__mute">
+                <input type="range" id="soundLevel" class="volume__range" min="0" max="10">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="section delivery">
         <div class="container">
           <h2 class="section-title section-title--delivery">
@@ -1755,12 +1778,12 @@
                 <div class="form__row">
                   <label class="form__block">
                     <div class="form__block-title">Имя</div>
-                    <input type="text" class="form-field form__input" id="name">
+                    <input type="text" class="form-field form__input" name="name" id="name" required>
                     </input>
                   </label>
                   <label class="form__block">
                     <div class="form__block-title">Телефон</div>
-                    <input type="text" class="form-field form__input" id="phone">
+                    <input type="text" class="form-field form__input" name="phone" id="phone" required>
                     </input>
                   </label>
                 </div>
@@ -1798,7 +1821,7 @@
                 <div class="form__row">
                   <label class="form__block">
                     <div class="form__block-title">Комментарий</div>
-                    <textarea type="text" class="form-field form__textarea" id="comments">
+                    <textarea type="text" class="form-field form__textarea" id="comments" name="comments" required>
                     </textarea>
                   </label>
                 </div>
@@ -1839,18 +1862,21 @@
         </div>
       </section>
       <section class="section map">
+        <div class="map__container" id="map">
+
+        </div>
         <footer class="footer">
           <div class="container container--footer">
             <div class="contacts-col">
               <div class="adress">
-                Санкт-Петербург, ул.Бабушкина, д.12/1, 15
+                Воронеж, ул.Лизюкова, д.12/1, 15
               </div>
               <div class="phone">
                 <a href="tel:+78123771377" class="phone-value">
                   <svg class="phone-frame">
                     <use xlink:href="./img/sprite.svg#phone"></use>
                   </svg>
-                  +7 (812) 377-13-77
+                  +7 (473) 222-22-22
                 </a>
               </div>
             </div>
@@ -1913,6 +1939,9 @@
         </li>
         <li class="points-item">
           <a href="#" class="points-link" data-to-scroll="7"></a>
+        </li>
+        <li class="points-item">
+          <a href="#" class="points-link" data-to-scroll="8"></a>
         </li>
       </ul>
     </div>
@@ -1988,6 +2017,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
   <script type="text/javascript" src="./js/slick-1.8.1/slick/slick.min.js"></script>
   <script src="./js/sliderJquery.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=037c87d1-0bab-49be-9a42-799195d18952&lang=ru_RU"
+  type="text/javascript">
+  </script>
   <script src="./js/main.js"></script>
 </body>
 

@@ -14,6 +14,7 @@
 
   &--we {
     padding-bottom: 12%;
+
     @include phones {
       padding-bottom: 7%;
     }
@@ -26,21 +27,32 @@
   &--footer {
     flex-direction: row;
     justify-content: space-between;
+
     @include phones {
       flex-direction: column;
       align-items: center;
-    } 
+    }
   }
-  &--burgers{
+
+  &--burgers {
     flex-direction: column;
     justify-content: center;
     position: relative;
+
     @include tablets {
       width: 70%;
     }
-  
+
     @include phones {
       width: 90%;
+    }
+  }
+
+  &--video {
+    width: rem(660px);
+
+    @include tablets {
+      width: 95%;
     }
   }
 }

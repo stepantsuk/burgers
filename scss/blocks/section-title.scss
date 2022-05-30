@@ -34,7 +34,6 @@
     margin-bottom: rem(45px);
   }
   &--menu{
-    @include gagalin();
     font-size: rem(72px);
     color: $white;
     position: absolute;
@@ -46,7 +45,6 @@
     }
   }
   &--submenu {
-    @include gagalin();
     font-size: rem(40px);
     color: $white;
     white-space: nowrap;
@@ -59,6 +57,11 @@
     @include phones {
       font-size: rem(32px);
     }
+  }
+  &--video {
+    color: $dark-grey;
+    text-align: center;
+    margin-bottom: rem(32px);
   }
 
 }

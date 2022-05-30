@@ -1,4 +1,8 @@
 .map {
-  background: url(./../img/bg/bg_map.png);
-  @include bgcover();
-};
+  position: relative;
+}
+
+.map__container {
+  height: 100%;
+  width: 100%;
+}
