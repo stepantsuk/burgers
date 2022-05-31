@@ -6,15 +6,10 @@
   display: flex;
   align-items: center;
   position: relative;
-<<<<<<< HEAD
   padding-top: 8vw;
   padding-bottom: 8vw;
   flex-shrink: 0;
   width: 100%;
-=======
-  padding-top: 5vw;
-  padding-bottom: 7vw;
->>>>>>> master
 
   &-left,
   &-right {
@@ -81,13 +76,10 @@
   &--active .structure__dropdown {
     display: flex;
   }
-<<<<<<< HEAD
 
   &--active .structure__title {
     opacity: 1;
   }
-=======
->>>>>>> master
 }
 
 .structure__pic {

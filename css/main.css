@@ -1096,7 +1096,7 @@ img {
 }
 
 .footer {
-  background: url("./../../img/bg/bg_footer.png");
+  background: url("./../img/bg/bg_footer.png");
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1885,7 +1885,7 @@ img {
 }
 
 .menu {
-  background-image: url(./../../img/bg/bg_menu.png);
+  background-image: url(./../img/bg/bg_menu.png);
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1967,7 +1967,7 @@ img {
   color: #f9b43b;
 }
 .submenu--active .submenu__desc {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .modal {
@@ -1976,9 +1976,9 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(47, 50, 52, 0.99);
   position: fixed;
   z-index: 30;
+  background-color: rgba(47, 50, 52, 0.8);
 }
 .modal--active {
   display: -webkit-box;
@@ -2072,7 +2072,7 @@ img {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: 0px;
-  background: url("./../../img/svg/arrow-scroll.svg");
+  background: url("./../img/svg/arrow-scroll.svg");
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2213,13 +2213,3 @@ img {
 .video-player__play--active {
   opacity: 0;
 }
-
-.submenu--active .submenu__block {
-  width: 550px;
-}
-@media screen and (max-width: 480px) {
-  .submenu--active .submenu__block {
-    width: 360px;
-  }
-}
-

@@ -1,37 +1,39 @@
-.slick-slider{
-	min-width: 0;
+.slick-slider {
+  min-width: 0;
 }
 
 .slick-list {
-	overflow: hidden;
+  overflow: hidden;
 }
 
-.slick-track{
-	display: flex;
-	align-items: flex-start;
+.slick-track {
+  display: flex;
+  align-items: flex-start;
 }
 
 
 /* Стрелка */
-.slick-arrow{
+.slick-arrow {
   @include centered('y');
   font-size: 0px;
-  background: url("./../../img/svg/arrow-scroll.svg");
+  background: url("./../img/svg/arrow-scroll.svg");
   @include bgcover();
   width: rem(27px);
   height: rem(15px);
   z-index: 10;
 }
+
 /* Стрелка влево */
-.slick-arrow.slick-prev{
+.slick-arrow.slick-prev {
   transform: rotate(90deg);
   left: rem(-20px);
 }
+
 /* Стрелка вправо */
-.slick-arrow.slick-next{
+.slick-arrow.slick-next {
   transform: rotate(-90deg);
   right: rem(-20px);
 }
-/* Стрелка не активная */
-.slick-arrow.slick-disabled{}
 
+/* Стрелка не активная */
+.slick-arrow.slick-disabled {}
