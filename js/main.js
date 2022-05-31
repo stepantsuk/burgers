@@ -1,4 +1,4 @@
-/// модальное окно в адаптиве, бургер меню
+////////////////// модальное окно в адаптиве, бургер меню //////////////////
 
 let onBurgerMenu = (() => {
 
@@ -6,26 +6,6 @@ let onBurgerMenu = (() => {
   let menu = document.querySelector("#hamburger-menu");
   let logoBurger = menu.querySelector(".logo");
   let itemList = menu.querySelector(".nav__list").children;
-
-  // console.log(itemList);
-
-  // let counter = 0;
-
-  // let slideInUp = (arg) => {
-  //   arg.classList.toggle("slideInUp");
-  //   console.log(arg);
-  // };
-
-  // let startMenuAnimation = () => {
-  //   for (let i = 0; i < itemList.length; i++) {
-
-  //     setTimeout(slideInUp, 1000, itemList[i])
-
-  //     // itemList[i].classList.toggle("slideInUp");
-  //     // setTimeout(startMenuAnimation, 1000);
-  //     // console.log(i);
-  //   }
-  // };
 
   let counter = 0;
 
@@ -46,20 +26,6 @@ let onBurgerMenu = (() => {
   let startMenuAnima = () => {
     startMenu();
   }
-
-  // let startMenuAnimation = function startMenu() {
-  //   let element = itemList[counter];
-
-  //   element.classList.toggle('slideInUp');
-  //   counter++;
-  //   if (counter < itemList.length) {
-  //     setTimeout(startMenu, 100);
-  //     console.log(counter)
-  //   }
-  //   if (counter === itemList.length) {
-  //     counter = 0;
-  //   }
-  // }
 
   let toggleMenu = (e) => {
     e.preventDefault();
@@ -84,7 +50,7 @@ let onBurgerMenu = (() => {
   };
 })();
 
-onBurgerMenu.open()
+onBurgerMenu.open();
 
 /// модальное окно только для отзвов "modal-review" 
 
@@ -125,8 +91,9 @@ onBurgerMenu.open()
 //   item.addEventListener("click", openModalReview)
 // })
 
+;
 
-/// модальное окно, общая функция
+////////////////// модальное окно, общая функция //////////////////
 
 let overlay = (() => {
 
@@ -203,7 +170,7 @@ let openReview = (template) => {
 let contentReview = document.querySelector("#reviewOverlay").innerHTML;
 openReview(contentReview);
 
-/// вертикальный аккордеон
+////////////////// вертикальный аккордеон  //////////////////
 
 let member = document.querySelectorAll(".member__link");
 
@@ -253,7 +220,7 @@ verticalAccordeon();
 //   })
 // })
 
-/// горизонтальный аккордеон Jquery через submenu__link
+////////////////// горизонтальный аккордеон Jquery через submenu__link //////////////////
 
 $(document).ready(function () {
   let windowWidth = $(window).width();
@@ -303,7 +270,7 @@ $(document).ready(function () {
 //   })
 // };
 
-/// слайдер вариант 1
+////////////////// слайдер вариант 1 //////////////////
 
 // let sliderLeft = document.querySelector("#sliderLeft");
 // let slider = document.querySelector("#slider");
@@ -326,7 +293,7 @@ $(document).ready(function () {
 //   moveSlider("right", e)
 // })
 
-/// ИСПОЛЬЗУЙ ЕГО ЕСЛИ НЕ JQ слайдер вариант 2 за счет изменения style.right c iief
+////////////////// ИСПОЛЬЗУЙ ЕГО ЕСЛИ НЕ JQ слайдер вариант 2 за счет изменения style.right c iief //////////////////
 
 // let applySlider = (() => {
 //   let sliderLeft = document.querySelector("#sliderLeft");
@@ -375,7 +342,7 @@ $(document).ready(function () {
 
 // applySlider.init();
 
-/// слайдер вариант 3 за счет изменения style.right
+////////////////// слайдер вариант 3 за счет изменения style.right //////////////////
 
 // let sliderLeft = document.querySelector("#sliderLeft");
 // let slider = document.querySelector("#slider");
@@ -421,7 +388,7 @@ $(document).ready(function () {
 // sliderRight.addEventListener("click", (e) => { moveSliderRight(e) });
 
 
-/// формирование запроса на сервер
+////////////////// формирование запроса на сервер //////////////////
 
 let sendAjax = (form) => {
   let formAjax = new FormData();
@@ -440,7 +407,7 @@ let sendAjax = (form) => {
   return xhr;
 };
 
-/// обработка ответа сервера
+////////////////// обработка ответа сервера //////////////////
 
 let submitForm = (e) => {
   e.preventDefault();
@@ -463,7 +430,7 @@ let submitForm = (e) => {
 let orderForm = document.querySelector("#form");
 orderForm.addEventListener("submit", submitForm);
 
-/// one page scroll
+////////////////// one page scroll //////////////////
 
 let onePageScroll = (function () {
   let detect = new MobileDetect(window.navigator.userAgent)
@@ -554,7 +521,7 @@ let onePageScroll = (function () {
   });
 })();
 
-/// burgerStructure, dropdown
+////////////////// burgerStructure, dropdown //////////////////
 
 $(".burgers__structure").on({
   mouseenter: function (e) {
@@ -576,14 +543,14 @@ $(".structure__cross").on({
   }
 })
 
-/////////////////////////////Видео Плеер//////////////////////////////////////
+//////////////////  Видео Плеер  //////////////////
 
 let video;
 let durationControl;
 let soundControl;
 let intervalId;
 
-// документ полностью загружен
+////////////////// документ полностью загружен  //////////////////
 $().ready(function () {
 
   video = document.getElementById("player");
@@ -712,7 +679,7 @@ function changeSoundVolume() {
   // console.log(video.volume)
 }
 
-/// yandex map вариант раз
+////////////////// yandex map вариант раз //////////////////
 
 // ymaps.ready(init);
 // function init() {
@@ -748,7 +715,7 @@ function changeSoundVolume() {
 // }
 
 
-/// yandex map вариант два
+////////////////// yandex map вариант два //////////////////
 
 
 ymaps.ready(init);
