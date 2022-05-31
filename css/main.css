@@ -2042,7 +2042,7 @@ img {
   right: 15px;
   width: 15px;
   height: 15px;
-  background-image: url("./../../img/svg/close.svg");
+  background-image: url("./../img/svg/close.svg");
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
