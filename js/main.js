@@ -502,7 +502,7 @@ let onePageScroll = (function () {
   if (isMobile) {
     $(window).swipe({
       swipe: function (event, direction) {
-        scrollToSections(direction);
+        scrollToSection(direction);
       }
     });
   }
