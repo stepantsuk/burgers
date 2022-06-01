@@ -19,22 +19,22 @@ html {
   font-size: 16px;
 
   // хз... может убрать размер шрифта для устройств
-  // @include tablets {
-  //   font-size: 15px;
-  // }
+  @include tablets {
+    font-size: 15px;
+  }
 
-  // @include phones {
-  //   font-size: 14px;
-  // }
+  @include phones {
+    font-size: 14px;
+  }
 
-  // @include small-phones {
-  //   font-size: 12px;
-  // }
+  @include small-phones {
+    font-size: 12px;
+  }
 }
 
 #content {
   height: 100%;
-  min-height: rem(650px);
+  // min-height: rem(650px);
   transition: transform .5s;
   //will-change: transform;
 }

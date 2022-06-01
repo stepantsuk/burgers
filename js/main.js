@@ -502,7 +502,7 @@ let onePageScroll = (function () {
   if (isMobile) {
     $(window).swipe({
       swipe: function (event, direction) {
-        scrollToSections(direction);
+        scrollToSection(direction);
       }
     });
   }
@@ -553,7 +553,7 @@ let durationControl;
 let soundControl;
 let intervalId;
 
-////////////////// документ полностью загружен  //////////////////
+  // документ полностью загружен
 $().ready(function () {
 
   video = document.getElementById("player");
