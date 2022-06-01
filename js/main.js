@@ -494,9 +494,9 @@ let onePageScroll = (function () {
       let direction = deltaY > 0 ? "up" : "down";
       scrollToSection(direction);
     },
-    touchmove: function (e) {
-      e.preventDefault();
-    }
+//    touchmove: function (e) {
+//      e.preventDefault();
+//    }
   })
 
   if (isMobile) {
