@@ -18,7 +18,7 @@ let onBurgerMenu = (() => {
     counter++;
     if (counter < itemList.length) {
       setTimeout(startMenu, 50);
-      console.log(counter)
+      //console.log(counter)
     }
     if (counter === itemList.length) {
       counter = 0;
@@ -463,7 +463,7 @@ let onePageScroll = (function () {
 
   $("[data-to-scroll]").on("click", function (e) {
     e.preventDefault;
-    performTransition($(e.target).data("to-scroll"));
+    performTransition($(e.currentTarget).data("to-scroll"));
   })
 
   let defineSections = function () {
