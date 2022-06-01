@@ -2,7 +2,7 @@
   @include bgcover();
   background-image: url(./../img/bg/bg_we.png);
   @include tablets {
-    background-image: url(./../../img/bg/bg_we_tablet.png)
+    background-image: url(./../img/bg/bg_we_tablet.png)
   }
 }
 

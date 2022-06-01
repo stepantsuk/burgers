@@ -553,7 +553,7 @@ let durationControl;
 let soundControl;
 let intervalId;
 
-////////////////// документ полностью загружен  //////////////////
+  // документ полностью загружен
 $().ready(function () {
 
   video = document.getElementById("player");
