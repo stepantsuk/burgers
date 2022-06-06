@@ -434,6 +434,7 @@ let orderForm = document.querySelector("#form");
 orderForm.addEventListener("submit", submitForm);
 
 ////////////////// one page scroll //////////////////
+$(window).on()
 
 let onePageScroll = (function () {
   let detect = new MobileDetect(window.navigator.userAgent)
@@ -444,21 +445,23 @@ let onePageScroll = (function () {
   let isAction = false;
 
   let performTransition = function (sectionIndex) {
-    if (!isAction) {
-      isAction = true;
-      let scrollHeight = sectionIndex * (-100) + "%";
+    console.log("start", isAction);
+    if (isAction) return;
+    isAction = true;
+    console.log("start#2", isAction);
+    let scrollHeight = sectionIndex * (-100) + "%";
 
-      sections.eq(sectionIndex).addClass("is-active").siblings().removeClass("is-active");
-      contentView.css({
-        transform: `translateY(${scrollHeight})`,
-      });
+    sections.eq(sectionIndex).addClass("is-active").siblings().removeClass("is-active");
+    contentView.css({
+      transform: `translateY(${scrollHeight})`,
+    });
 
-      $(".points-item").eq(sectionIndex).addClass("points-item--active").siblings().removeClass("points-item--active");
+    $(".points-item").eq(sectionIndex).addClass("points-item--active").siblings().removeClass("points-item--active");
 
-      setTimeout(function () {
-        isAction = false;
-      }, 350)
-    }
+    setTimeout(function () {
+      console.log("setTimeout end");
+      isAction = false;
+    }, 1000 + 500) // animation time(transition: transform) + delay for main function
   };
 
   $("[data-to-scroll]").on("click", function (e) {
@@ -553,7 +556,7 @@ let durationControl;
 let soundControl;
 let intervalId;
 
-  // документ полностью загружен
+// документ полностью загружен
 $().ready(function () {
 
   video = document.getElementById("player");
@@ -725,25 +728,25 @@ ymaps.ready(init);
 
 let placemarks = [
   {
-    latitude: 51.660848, 
+    latitude: 51.660848,
     longitude: 39.202281,
     hintContent: 'Mr. Burger №1',
     balloonContent: 'Лучшие бургеры в городе!',
   },
   {
-    latitude: 51.664741, 
+    latitude: 51.664741,
     longitude: 39.20514,
     hintContent: 'Mr. Burger №2',
     balloonContent: 'Лучшие бургеры в городе!',
   },
   {
-    latitude: 51.666020, 
+    latitude: 51.666020,
     longitude: 39.203111,
     hintContent: 'Mr. Burger №3',
     balloonContent: 'Лучшие бургеры в городе!',
   },
   {
-    latitude: 51.664280, 
+    latitude: 51.664280,
     longitude: 39.1979481,
     hintContent: 'Mr. Burger №4',
     balloonContent: 'Лучшие бургеры в городе!',
