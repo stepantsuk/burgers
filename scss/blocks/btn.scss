@@ -4,7 +4,7 @@
   padding: rem(10px) rem(15px);
   border-radius: rem(5px);
   text-transform: uppercase;
-  &--header {
+  &--header, &--modal {
     background-color: $orange;
     @include ubuntu(500);
     font-size: rem(13px);

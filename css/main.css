@@ -564,7 +564,7 @@ img {
   border-radius: 0.3125rem;
   text-transform: uppercase;
 }
-.btn--header {
+.btn--header, .btn--modal {
   background-color: #e45028;
   font-family: "ubuntu", Arial, sans-serif;
   font-weight: 500;
@@ -575,11 +575,11 @@ img {
   transition: background-color 0.3s;
 }
 @media screen and (max-width: 768px) {
-  .btn--header {
+  .btn--header, .btn--modal {
     margin-right: 5.625rem;
   }
 }
-.btn--header:hover {
+.btn--header:hover, .btn--modal:hover {
   background-color: #c1401e;
 }
 .btn--reviews {
