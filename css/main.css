@@ -582,6 +582,11 @@ img {
 .btn--header:hover, .btn--modal:hover {
   background-color: #c1401e;
 }
+@media screen and (max-width: 768px) {
+  .btn--modal {
+    margin-right: 0;
+  }
+}
 .btn--reviews {
   background-color: rgba(47, 50, 52, 0.8);
   font-family: "ubuntu", Arial, sans-serif;

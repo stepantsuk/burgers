@@ -16,6 +16,11 @@
       &:hover {
     background-color: #c1401e;
   }}
+  &--modal {
+    @include tablets {
+      margin-right: 0;
+    }
+  }
   &--reviews {
     background-color:$dark-grey08;
     @include ubuntu(500);
